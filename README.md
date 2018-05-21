@@ -1,2 +1,2 @@
-# touring_the_tidyverse
+# Touring the tidyverse
 Slides and markdown for the talks
