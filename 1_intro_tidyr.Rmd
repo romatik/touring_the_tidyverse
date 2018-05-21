@@ -141,3 +141,4 @@ getNamespaceExports("tidyr")
 # Contacts
 
 http://mishabalyasin.com/
+Slides and markdown - https://github.com/romatik/touring_the_tidyverse
