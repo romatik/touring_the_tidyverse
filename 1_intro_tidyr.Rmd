@@ -98,6 +98,11 @@ background-position: 90% 8%
 
 # tidyr
 
+1. tidyr replaces reshape2 (2010-2014) and reshape (2005-2010).
+2. Current version - `r packageVersion("tidyr")`
+3. https://github.com/tidyverse/tidyr
+4. __Hadley Wickham__ and Lionel Henry are two main contributors.
+
 ---
 # Tidy data
 
@@ -124,6 +129,8 @@ getNamespaceExports("tidyr")
 
 ---
 # Examples of usage (demo)
+
+https://github.com/tidyverse/tidyr/tree/master/demo
 
 ---
 # Resources
