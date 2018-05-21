@@ -60,7 +60,7 @@ library(tidyverse)
 6. Model: rsample, tidyposterior, recipes, broom
 --
 
-7. Beyond tidyverse (tibbletime, tidytext)
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
 
 ---
 # Tidy manifesto<sup>1</sup>
@@ -131,6 +131,10 @@ getNamespaceExports("tidyr")
 # Examples of usage (demo)
 
 https://github.com/tidyverse/tidyr/tree/master/demo
+https://www.daeconomist.com/post/2018-05-15-spread/
+http://www.jvcasillas.com/tidyr_tutorial/
+https://rpubs.com/bradleyboehmke/data_wrangling
+https://www.youtube.com/watch?v=RbUWwuJeUC8
 
 ---
 # Resources
@@ -140,6 +144,7 @@ https://github.com/tidyverse/tidyr/tree/master/demo
 3. http://vita.had.co.nz/papers/tidy-data.html
 4. https://www.r-exercises.com/2017/06/22/data-wrangling-reshaping/
 5. https://community.rstudio.com/
+6. https://www.daeconomist.com/post/2018-05-15-spread/
 
 ---
 # Feingold plug
