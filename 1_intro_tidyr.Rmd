@@ -23,6 +23,36 @@ options(htmltools.dir.version = FALSE)
 All things tidyverse: https://www.tidyverse.org/
 
 ---
+# Tidy manifesto<sup>1</sup>
+
+1. Reuse existing data structures.
+
+--
+2. Compose simple functions with the pipe.
+
+  - Strive to keep functions as simple as possible.
+  - Avoid mixing side-effects with transformations.
+  - Function names should be verbs.
+
+--
+3. Embrace functional programming.
+  - Immutable objects and copy-on-modify semantics.
+  - The generic functions provided by S3 and S4. 
+  - Tools that abstract over for-loops.
+
+--
+4. Design for humans.
+  - Invest time in naming your functions.
+  - Favour explicit, lengthy names, over short, implicit, names.
+  - Think about how autocomplete can also make an API that’s easy to write.
+
+
+.footnote[
+[1] https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html
+]
+
+
+---
 background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
 background-size: 800px
 
@@ -63,33 +93,9 @@ library(tidyverse)
 7. Beyond tidyverse (tibbletime, tidytext, janitor)
 
 ---
-# Tidy manifesto<sup>1</sup>
+class: center, middle
 
-1. Reuse existing data structures.
-
---
-2. Compose simple functions with the pipe.
-
-  - Strive to keep functions as simple as possible.
-  - Avoid mixing side-effects with transformations.
-  - Function names should be verbs.
-
---
-3. Embrace functional programming.
-  - Immutable objects and copy-on-modify semantics.
-  - The generic functions provided by S3 and S4. 
-  - Tools that abstract over for-loops.
-
---
-4. Design for humans.
-  - Invest time in naming your functions.
-  - Favour explicit, lengthy names, over short, implicit, names.
-  - Think about how autocomplete can also make an API that’s easy to write.
-
-
-.footnote[
-[1] https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html
-]
+# Tidy data
 
 ---
 background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyr.png)
