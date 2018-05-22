@@ -123,13 +123,29 @@ knitr::kable(head(tidyr::table2), format = "html")
 ---
 # Overview of the API
 ```{r tidyr_api}
-getNamespaceExports("tidyr")
+funs <- getNamespaceExports("tidyr")
+funs[!grepl(x = funs, pattern = "_$")]
 ```
 
 
 ---
 # Examples of usage (demo)
 
+1. Main verbs
+  - `spread` and `gather`
+  
+2. Expanding data
+  - `complete`, `nesting`, `expand`, `crossing`, `full_seq`
+
+3. Working with `NA`s
+  - `drop_na`, `fill`, `replace_na`
+  
+4. Working with columns
+  - `unite`, `separate`, `separate_rows`, `extract`, `uncount`, `extract_numeric`
+
+5. List-columns
+  - `nest` and `unnest`
+  
 https://github.com/tidyverse/tidyr/tree/master/demo
 https://www.daeconomist.com/post/2018-05-15-spread/
 http://www.jvcasillas.com/tidyr_tutorial/
@@ -145,6 +161,7 @@ https://www.youtube.com/watch?v=RbUWwuJeUC8
 4. https://www.r-exercises.com/2017/06/22/data-wrangling-reshaping/
 5. https://community.rstudio.com/
 6. https://www.daeconomist.com/post/2018-05-15-spread/
+7. https://github.com/MangoTheCat/tidyshiny/
 
 ---
 # Feingold plug
@@ -153,4 +170,5 @@ https://www.youtube.com/watch?v=RbUWwuJeUC8
 # Contacts
 
 http://mishabalyasin.com/
-Slides and markdown - https://github.com/romatik/touring_the_tidyverse
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
