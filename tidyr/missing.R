@@ -6,6 +6,7 @@ df %>% drop_na(x)
 df %>% drop_na(starts_with("x"))
 
 # fills with the previous non-missing value. Useful when only changes are recorded
+df <- data.frame(Month = 1:12, Year = c(2000, rep(NA, 11)))
 df %>% fill(Year)
 
 # replacing NA's
