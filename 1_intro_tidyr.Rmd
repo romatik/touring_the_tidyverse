@@ -137,16 +137,16 @@ funs[!grepl(x = funs, pattern = "_$")]
 ---
 # Examples of usage (demo)
 
-1. Main verbs
+1. Reshape data
   - `spread` and `gather`
   
-2. Expanding data
+2. Expand tables
   - `complete`, `nesting`, `expand`, `crossing`, `full_seq`
 
-3. Working with `NA`s
+3. Handle missing values
   - `drop_na`, `fill`, `replace_na`
   
-4. Working with columns
+4. Split cells
   - `unite`, `separate`, `separate_rows`, `extract`, `uncount`, `extract_numeric`
 
 5. List-columns
@@ -168,6 +168,7 @@ https://www.youtube.com/watch?v=RbUWwuJeUC8
 5. https://community.rstudio.com/
 6. https://www.daeconomist.com/post/2018-05-15-spread/
 7. https://github.com/MangoTheCat/tidyshiny/
+8. https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf
 
 ---
 # Feingold plug
