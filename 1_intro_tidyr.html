@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touring tidyverse</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Misha Balyasin" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Touring tidyverse
+## tidy data + tidyr
+### Misha Balyasin
+### 2018/05/24
+
+---
+
+
+
+
+# Intro to the tidyverse
+
+&gt;  The tidyverse is an __opinionated__ collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. 
+
+All things tidyverse: https://www.tidyverse.org/
+
+---
+# Tidy manifesto&lt;sup&gt;1&lt;/sup&gt;
+
+1. Reuse existing data structures.
+
+--
+2. Compose simple functions with the pipe.
+
+  - Strive to keep functions as simple as possible.
+  - Avoid mixing side-effects with transformations.
+  - Function names should be verbs.
+
+--
+3. Embrace functional programming.
+  - Immutable objects and copy-on-modify semantics.
+  - The generic functions provided by S3 and S4. 
+  - Tools that abstract over for-loops.
+
+--
+4. Design for humans.
+  - Invest time in naming your functions.
+  - Favour explicit, lengthy names, over short, implicit, names.
+  - Think about how autocomplete can also make an API that’s easy to write.
+
+
+.footnote[
+[1] https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html
+]
+
+
+---
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+# tidyverse in a picture
+
+---
+background-image: url(https://avatars1.githubusercontent.com/u/22032646?v=3&amp;s=400)
+background-size: 100px
+background-position: 90% 8%
+
+# Core tidyverse
+
+```r
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+```
+
+```
+## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.5
+## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
+## ✔ readr   1.1.1     ✔ forcats 0.3.0
+```
+
+```
+## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+```
+
+---
+# Plan for the talks
+
+1. Wrangle: tidyr
+--
+
+2. Wrangle: dplyr
+--
+
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+--
+
+4. Program: purrr + glue
+--
+
+5. Program: tidyeval 
+--
+
+6. Model: rsample, tidyposterior, recipes, broom
+--
+
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+
+---
+class: center, middle
+
+# Tidy data
+
+---
+background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyr.png)
+background-size: 100px
+background-position: 90% 8%
+
+# tidyr
+
+1. tidyr replaces reshape2 (2010-2014) and reshape (2005-2010).
+2. Current version - 0.8.1
+3. https://github.com/tidyverse/tidyr
+4. __Hadley Wickham__ and Lionel Henry are two main contributors.
+
+---
+# Tidy data
+
+1. Each variable forms a column.
+
+2. Each observation forms a row.
+
+3. Each type of observational unit forms a table.
+
+This is Codd's 3rd normal form.
+
+---
+# Examples
+
+```r
+knitr::kable(head(tidyr::table2), format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; type &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; count &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Afghanistan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; cases &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 745 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Afghanistan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; population &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19987071 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Afghanistan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; cases &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2666 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Afghanistan &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; population &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20595360 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Brazil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; cases &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37737 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Brazil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; population &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 172006362 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+# Overview of the API
+
+```r
+funs &lt;- getNamespaceExports("tidyr")
+funs[!grepl(x = funs, pattern = "_$")]
+```
+
+```
+##  [1] "unnest"          "full_seq"        "spread"         
+##  [4] "complete"        "drop_na"         "crossing"       
+##  [7] "separate_rows"   "gather"          "extract"        
+## [10] "fill"            "separate"        "uncount"        
+## [13] "nest"            "extract_numeric" "expand"         
+## [16] "unite"           "nesting"         "%&gt;%"            
+## [19] "replace_na"
+```
+
+
+---
+# Examples of usage (demo)
+
+1. Reshape data
+  - `spread` and `gather`
+  
+2. Expand tables
+  - `complete`, `nesting`, `expand`, `crossing`, `full_seq`
+
+3. Handle missing values
+  - `drop_na`, `fill`, `replace_na`
+  
+4. Split cells
+  - `unite`, `separate`, `separate_rows`, `extract`, `uncount`
+
+5. List-columns
+  - `nest` and `unnest`
+  
+---
+# Resources
+
+1. http://r4ds.had.co.nz/index.html
+2. http://tidyr.tidyverse.org/
+3. http://vita.had.co.nz/papers/tidy-data.html
+4. https://www.r-exercises.com/2017/06/22/data-wrangling-reshaping/
+5. https://community.rstudio.com/
+6. https://www.daeconomist.com/post/2018-05-15-spread/
+7. https://github.com/MangoTheCat/tidyshiny/
+8. https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf
+
+---
+# Feingold plug
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
