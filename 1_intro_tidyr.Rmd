@@ -147,7 +147,7 @@ funs[!grepl(x = funs, pattern = "_$")]
   - `drop_na`, `fill`, `replace_na`
   
 4. Split cells
-  - `unite`, `separate`, `separate_rows`, `extract`, `uncount`, `extract_numeric`
+  - `unite`, `separate`, `separate_rows`, `extract`, `uncount`
 
 5. List-columns
   - `nest` and `unnest`
