@@ -152,12 +152,6 @@ funs[!grepl(x = funs, pattern = "_$")]
 5. List-columns
   - `nest` and `unnest`
   
-https://github.com/tidyverse/tidyr/tree/master/demo
-https://www.daeconomist.com/post/2018-05-15-spread/
-http://www.jvcasillas.com/tidyr_tutorial/
-https://rpubs.com/bradleyboehmke/data_wrangling
-https://www.youtube.com/watch?v=RbUWwuJeUC8
-
 ---
 # Resources
 
