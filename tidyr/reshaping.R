@@ -85,3 +85,29 @@ activities %>%
   separate(key, into = c("location", "time")) %>%
   arrange(id, trt, time) %>%
   spread(location, value)
+
+
+# https://www.daeconomist.com/post/2018-05-15-spread/
+df <- tibble::tibble(age = c(21, 17, 32, 29, 15),
+                     gender = c("Male", "Female", "Female", "Male", "Male")) %>%
+  dplyr::mutate(gender = as.factor(gender))
+
+df %>%
+  spread(gender, age)
+
+# Expected output
+## # A tibble: 3 x 2
+##   Female Male
+## * <chr>  <chr>
+## 1 17     21
+## 2 32     29
+## 3 <NA>   15
+
+df <- df %>%
+  group_by(gender) %>%
+  mutate(grouped_id = row_number())
+df
+
+df %>%
+  spread(gender, age) %>%
+  select(-grouped_id)
