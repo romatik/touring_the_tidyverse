@@ -1,6 +1,3 @@
-# 4. Split cells
-# -, `uncount`,
-
 library(dplyr)
 library(tidyr)
 df <- data.frame(x = c(NA, "a.b", "a.d", "b.c"))
