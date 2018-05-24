@@ -98,6 +98,17 @@ class: center, middle
 # Tidy data
 
 ---
+# Tidy data
+
+1. Each variable forms a column.
+
+2. Each observation forms a row.
+
+3. Each type of observational unit forms a table.
+
+This is Codd's 3rd normal form.
+
+---
 background-image: url(https://www.rstudio.com/wp-content/uploads/2014/04/tidyr.png)
 background-size: 100px
 background-position: 90% 8%
@@ -109,16 +120,6 @@ background-position: 90% 8%
 3. https://github.com/tidyverse/tidyr
 4. __Hadley Wickham__ and Lionel Henry are two main contributors.
 
----
-# Tidy data
-
-1. Each variable forms a column.
-
-2. Each observation forms a row.
-
-3. Each type of observational unit forms a table.
-
-This is Codd's 3rd normal form.
 
 ---
 # Examples
