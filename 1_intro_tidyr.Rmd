@@ -164,6 +164,7 @@ funs[!grepl(x = funs, pattern = "_$")]
 6. https://www.daeconomist.com/post/2018-05-15-spread/
 7. https://github.com/MangoTheCat/tidyshiny/
 8. https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf
+9. https://github.com/rstudio/webinars/tree/master/54-row-oriented-work - some examples with nesting
 
 ---
 # Feingold plug
