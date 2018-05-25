@@ -35,7 +35,7 @@ All things tidyverse: https://www.tidyverse.org/
   - Function names should be verbs.
 
 --
-3. Embrace functional programming.
+3. Embrace R typical functional programming.
   - Immutable objects and copy-on-modify semantics.
   - The generic functions provided by S3 and S4. 
   - Tools that abstract over for-loops.
