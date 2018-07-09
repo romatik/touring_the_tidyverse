@@ -1,0 +1,56 @@
+---
+title: "Touring tidyverse"
+subtitle: "dplyr"
+author: "Misha Balyasin"
+date: "2018/05/24"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+---
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+---
+background-image: url(https://www.rstudio.com/wp-content/uploads/2015/01/dplyr-hexbin-logo.png)
+background-size: 100px
+background-position: 90% 8%
+
+# dplyr
+
+---
+# Examples
+
+---
+# Overview of the API
+```{r tidyr_api}
+funs <- getNamespaceExports("dplyr")
+funs[!grepl(x = funs, pattern = "_$")]
+```
+
+---
+# Examples of usage (demo)
+
+---
+# Resources
+
+1. https://dplyr.tidyverse.org/index.html
+2. http://r4ds.had.co.nz/transform.html
+3. https://suzan.rbind.io/2018/01/dplyr-tutorial-1/
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
