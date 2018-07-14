@@ -100,13 +100,20 @@ License: MIT
 
 ---
 # Overview of the API
-```{r tidyr_api}
+
+1. Single-table verbs.
+2. Single-table helpers.
+3. Two-table verbs.
+4. Remote tables.
+5. Vector functions.
+
+```{r dplyr_api}
 funs <- getNamespaceExports("dplyr")
 length(funs[!grepl(x = funs, pattern = "_$")])
 ```
 
 ---
-# Examples of usage (demo)
+# 
 
 ---
 # Resources
