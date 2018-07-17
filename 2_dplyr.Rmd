@@ -148,6 +148,11 @@ Notable participants:
 ---
 # Filtering rows
 
+Notable partiicipants:
+
+* `filter()`
+* `filter_*()`
+* `near()`, `between()`
 
 ---
 # Summarizing and slicing
