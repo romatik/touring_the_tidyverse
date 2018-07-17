@@ -6,6 +6,9 @@ msleep %>%
   select(name, sleep_total) %>%
   mutate(sleep_total_min = sleep_total * 60)
 
+msleep %>%
+  transmute(sleep_total_min = sleep_total * 60)
+
 ###
 msleep %>%
   select(name, sleep_total) %>%
