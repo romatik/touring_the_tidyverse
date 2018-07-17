@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touring tidyverse</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Misha Balyasin" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Touring tidyverse
+## dplyr
+### Misha Balyasin
+### 2018/05/24
+
+---
+
+
+
+
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+---
+background-image: url(https://www.rstudio.com/wp-content/uploads/2015/01/dplyr-hexbin-logo.png)
+background-size: 100px
+background-position: 90% 8%
+
+# dplyr
+
+has three main goals:
+
+1. Identify the most important data manipulation verbs and make them easy to use from R.
+
+2. Provide blazing fast performance for in-memory data by writing key pieces in C++ (using Rcpp)
+
+3. Use the same interface to work with data no matter where it's stored, whether in a data frame, a data table or database.
+
+
+---
+background-image: url(https://www.rstudio.com/wp-content/uploads/2015/01/dplyr-hexbin-logo.png)
+background-size: 100px
+background-position: 90% 8%
+
+# dplyr
+
+5 verbs:
+
+* `mutate()` adds new variables that are functions of existing variables
+* `select()` picks variables based on their names.
+* `filter()` picks cases based on their values.
+* `summarise()` reduces multiple values down to a single summary.
+* `arrange()` changes the ordering of the rows.
+
+
+---
+# Initial commit of dplyr
+
+The year was 2012... (`2012-10-28 19:37` to be precise)
+
+```
+Package: plyr2
+Type: Package
+Title: Tools for splitting, applying and combining data
+Version: 0.01
+Author: Hadley Wickham &lt;h.wickham@gmail.com&gt;
+Maintainer: Hadley Wickham &lt;h.wickham@gmail.com&gt;
+Description: ddply on crack
+Depends:
+    R (&gt;= 2.15.1)
+License: MIT
+```
+
+---
+# 23 minutes later
+
+```
+Package: dplyr
+Type: Package
+Title: dplyr: a grammar of data manipulation
+Version: 0.01
+Author: Hadley Wickham &lt;h.wickham@gmail.com&gt;
+Maintainer: Hadley Wickham &lt;h.wickham@gmail.com&gt;
+Description: A fast, consistent tools for working with data frame like objects,
+    both in memory and out of memory.
+Imports:
+    stringr
+Depends:
+    R (&gt;= 2.15.1)
+License: MIT
+```
+
+---
+# Current state
+
+1. `dplyr` replaced `plyr` to specialize on data frames.
+2. Current version - 0.7.6.
+3. https://github.com/tidyverse/dplyr
+4. Developed by __Hadley Wickham__, Romain François, Lionel Henry, Kirill Müller.
+5. 5000+ commits by 151 contributors.
+
+---
+# Overview of the API
+.pull-left[
+1. Single-table verbs.
+2. Single-table helpers.
+3. Two-table verbs.
+4. Remote tables.
+5. Vector functions.
+
+
+```
+## [1] 215
+```
+
+]
+--
+.pull-right[
+
+1. Selecting columns.
+2. Transforming columns.
+3. Filtering rows.
+4. Summarizing and slicing.
+5. `dbplyr`.
+
+Based on https://github.com/suzanbaert/RTutorials
+]
+
+
+---
+# Selecting columns
+
+Notable participants:
+
+* `select()`
+* `rename()`
+* `select_*()`
+
+---
+# Transforming columns
+
+Notable participants:
+
+* `mutate()`
+* `mutate_*()`
+* `na_if()`
+
+
+---
+# Filtering rows
+
+Notable partiicipants:
+
+* `filter()`
+* `filter_*()`
+* `near()`, `between()`
+
+---
+# Summarizing and slicing
+
+* `summarize()`
+* `summarize_*()`
+* `add_tally()`
+* `add_count()`
+* `arrange()`
+
+---
+# `dbplyr`
+
+
+
+
+---
+# Resources
+
+1. https://dplyr.tidyverse.org/index.html
+2. http://r4ds.had.co.nz/transform.html
+3. https://suzan.rbind.io/2018/01/dplyr-tutorial-1/
+4. https://dplyr.tidyverse.org/reference/index.html
+5. https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
