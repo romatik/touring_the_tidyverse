@@ -131,6 +131,9 @@ Based on https://github.com/suzanbaert/RTutorials
 
 Notable participants:
 
+* `select()`
+* `rename()`
+* `select_*()`
 
 ---
 # Transforming columns
