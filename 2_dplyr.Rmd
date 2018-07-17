@@ -157,6 +157,12 @@ Notable partiicipants:
 ---
 # Summarizing and slicing
 
+* `summarize()`
+* `summarize_*()`
+* `add_tally()`
+* `add_count()`
+* `arrange()`
+
 ---
 # `dbplyr`
 
