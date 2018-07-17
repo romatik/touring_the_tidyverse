@@ -100,20 +100,55 @@ License: MIT
 
 ---
 # Overview of the API
-
+.pull-left[
 1. Single-table verbs.
 2. Single-table helpers.
 3. Two-table verbs.
 4. Remote tables.
 5. Vector functions.
 
-```{r dplyr_api}
+```{r dplyr_api, echo = FALSE}
 funs <- getNamespaceExports("dplyr")
 length(funs[!grepl(x = funs, pattern = "_$")])
 ```
 
+]
+--
+.pull-right[
+
+1. Selecting columns.
+2. Transforming columns.
+3. Filtering rows.
+4. Summarizing and slicing.
+5. `dbplyr`.
+
+Based on https://github.com/suzanbaert/RTutorials
+]
+
+
 ---
-# 
+# Selecting columns
+
+Notable participants:
+
+
+---
+# Transforming columns
+Notable participants
+
+
+---
+# Filtering rows
+
+
+---
+# Summarizing and slicing
+
+---
+# `dbplyr`
+
+
+
 
 ---
 # Resources
