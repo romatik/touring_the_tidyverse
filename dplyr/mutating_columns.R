@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # Mutating ----------------------------------------------------------------
-###
+### basics
 msleep %>%
   select(name, sleep_total) %>%
   mutate(sleep_total_min = sleep_total * 60)
@@ -9,12 +9,13 @@ msleep %>%
 msleep %>%
   transmute(sleep_total_min = sleep_total * 60)
 
-###
+### using formulas
 msleep %>%
   select(name, sleep_total) %>%
   mutate(sleep_total_vs_avg = sleep_total - round(mean(sleep_total), 1),
          sleep_total_vs_min = sleep_total - min(sleep_total))
-###
+
+### multiple ways to vectorize non-vectorized function
 msleep %>%
   select(name, contains("sleep")) %>%
   rowwise() %>%
@@ -24,13 +25,18 @@ msleep %>%
   select(name, contains("sleep")) %>%
   mutate(avg = purrr::map2_dbl(sleep_rem, sleep_cycle, ~mean(c(.x, .y))))
 
-###
+msleep %>%
+  mutate(anotherwt = bodywt) %>%
+  mutate(grand_mean = select(., ends_with("wt")) %>%
+           purrr::pmap_dbl(~mean(c(...))))
+
+### vectorized ifelse
 msleep %>%
   select(name, brainwt) %>%
   mutate(brainwt2 = ifelse(brainwt > 4, NA, brainwt)) %>%
   arrange(desc(brainwt))
 
-###
+### scoped mutates
 msleep %>%
   mutate_all(tolower)
 
@@ -39,7 +45,7 @@ msleep %>%
   select(name, sleep_total:bodywt) %>%
   mutate_if(is.numeric, round)
 
-###
+### scoped + tidyselect
 msleep %>%
   select(name, sleep_total:awake) %>%
   mutate_at(vars(contains("sleep")), ~(.*60))
@@ -55,7 +61,7 @@ msleep %>%
   mutate_at(vars(contains("sleep")), funs(min = .*60))
 
 
-###
+### recoding variables
 msleep %>%
   mutate(conservation2 = recode(conservation,
                                 "en" = "Endangered",
@@ -85,7 +91,7 @@ msleep %>%
     TRUE ~ "other")) %>%
   count(silly_groups)
 
-###
+### creating NA's
 msleep %>%
   select(name:order) %>%
   na_if("omni")
