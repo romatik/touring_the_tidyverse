@@ -74,13 +74,13 @@ msleep %>%
   group_by(order) %>%
   arrange(desc(sleep_total), .by_group = TRUE)
 
-###
+### top 5 by average
 msleep %>%
   group_by(order) %>%
   summarise(average = mean(sleep_total)) %>%
-  top_n(5)
+  top_n(5, wt = average)
 
-###
+### bottom 5 by average
 msleep %>%
   group_by(order) %>%
   summarise(average = mean(sleep_total)) %>%
@@ -92,7 +92,7 @@ msleep %>%
   summarise(average_sleep = mean(sleep_total), max_sleep = max(sleep_total)) %>%
   top_n(5, average_sleep)
 
-###
+### sampling
 msleep %>%
   sample_frac(.1)
 
@@ -100,6 +100,6 @@ msleep %>%
   sample_n(10)
 
 
-###
+### slicing
 msleep %>%
   slice(50:55)
