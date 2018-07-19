@@ -119,3 +119,9 @@ mtcars %>%
 mtcars %>%
   rownames_to_column("car_model") %>%
   head
+
+
+### pulling column out
+mtcars %>%
+  dplyr::pull(cyl)
+
