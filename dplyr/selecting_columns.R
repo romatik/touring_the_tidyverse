@@ -123,5 +123,15 @@ mtcars %>%
 
 ### pulling column out
 mtcars %>%
-  dplyr::pull(cyl)
+  pull(cyl)
+
+### extracting columns
+msleep %>%
+  first()
+
+msleep %>%
+  last()
+
+msleep %>%
+  nth(2)
 
