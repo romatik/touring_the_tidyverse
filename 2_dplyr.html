@@ -42,22 +42,6 @@ has three main goals:
 
 
 ---
-background-image: url(https://www.rstudio.com/wp-content/uploads/2015/01/dplyr-hexbin-logo.png)
-background-size: 100px
-background-position: 90% 8%
-
-# dplyr
-
-5 verbs:
-
-* `mutate()` adds new variables that are functions of existing variables
-* `select()` picks variables based on their names.
-* `filter()` picks cases based on their values.
-* `summarise()` reduces multiple values down to a single summary.
-* `arrange()` changes the ordering of the rows.
-
-
----
 # Initial commit of dplyr
 
 The year was 2012... (`2012-10-28 19:37` to be precise)
@@ -104,6 +88,23 @@ License: MIT
 5. 5000+ commits by 151 contributors.
 
 ---
+background-image: url(https://www.rstudio.com/wp-content/uploads/2015/01/dplyr-hexbin-logo.png)
+background-size: 100px
+background-position: 90% 8%
+
+# dplyr
+
+5 verbs:
+
+* `mutate()` adds new variables that are functions of existing variables
+* `select()` picks variables based on their names.
+* `filter()` picks cases based on their values.
+* `summarise()` reduces multiple values down to a single summary.
+* `arrange()` changes the ordering of the rows.
+
+
+
+---
 # Overview of the API
 .pull-left[
 1. Single-table verbs.
@@ -130,6 +131,14 @@ License: MIT
 Based on https://github.com/suzanbaert/RTutorials
 ]
 
+---
+# Not covered
+
+1. Joins (`inner_join()`, `left_join()` etc.).
+2. `group_by()` + `group_by_*()`.
+3. Binding (`bind_rows()`, `bind_cols()`, `combine()`).
+4. Cumulative functions (`cumall()`, `cumany()` etc.).
+5. Windowing functions (`?ranking` for the full list).
 
 ---
 # Selecting columns
@@ -148,7 +157,6 @@ Notable participants:
 * `mutate()`
 * `mutate_*()`
 * `na_if()`
-
 
 ---
 # Filtering rows
@@ -171,15 +179,15 @@ Notable partiicipants:
 ---
 # `dbplyr`
 
-
 ---
-# Not covered
+# Alternatives
 
-1. Joins (`inner_join()`, `left_join()` etc.).
-2. `group_by()` + `group_by_*()`.
-3. Binding (`bind_rows()`, `bind_cols()`, `combine()`).
-4. Cumulative functions (`cumall()`, `cumany()` etc.).
-5. Windowing functions (`?ranking` for the full list).
+* `data.table`
+&gt; data.table builds on base R functionality to reduce 2 types of time: programming time (easier to write, read, debug and maintain), and compute time (fast and memory efficient).
+
+* [`rquery`](https://github.com/WinVector/rquery) + [`rqdatatable`](https://github.com/WinVector/rqdatatable)
+
+* others?
 
 ---
 # Resources
