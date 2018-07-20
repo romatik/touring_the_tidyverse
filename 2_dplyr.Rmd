@@ -177,6 +177,16 @@ Notable partiicipants:
 # `dbplyr`
 
 ---
+# Alternatives
+
+* `data.table`
+> data.table builds on base R functionality to reduce 2 types of time: programming time (easier to write, read, debug and maintain), and compute time (fast and memory efficient).
+
+* [`rquery`](https://github.com/WinVector/rquery) + [`rqdatatable`](https://github.com/WinVector/rqdatatable)
+
+* others?
+
+---
 # Resources
 
 1. https://dplyr.tidyverse.org/index.html
