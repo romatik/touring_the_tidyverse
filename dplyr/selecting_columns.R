@@ -10,7 +10,6 @@ msleep %>%
   select(name, genus, sleep_total, awake) %>%
   glimpse()
 
-
 ### selecting with `:`
 msleep %>%
   select(name:order, sleep_total:sleep_cycle) %>%
@@ -128,6 +127,9 @@ mtcars %>%
 ### extracting columns
 msleep %>%
   first()
+
+msleep %>%
+  `[[`(1)
 
 msleep %>%
   last()
