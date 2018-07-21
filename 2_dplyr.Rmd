@@ -130,7 +130,7 @@ Based on https://github.com/suzanbaert/RTutorials
 # Not covered
 
 1. Joins (`inner_join()`, `left_join()` etc.).
-2. `group_by()` + `group_by_*()`.
+2. `group_by_*()`.
 3. Binding (`bind_rows()`, `bind_cols()`, `combine()`).
 4. Cumulative functions (`cumall()`, `cumany()` etc.).
 5. Windowing functions (`?ranking` for the full list).
@@ -175,6 +175,11 @@ Notable partiicipants:
 * `add_tally()`
 * `add_count()`
 * `arrange()`
+* `group_by()`
+* `top_n()`
+* `sample_frac()`
+* `sample_n()`
+* `slice()`
 
 ---
 # `dbplyr`

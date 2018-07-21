@@ -8,6 +8,8 @@ msleep %>%
 msleep %>%
   count(order, vore, sort = TRUE)
 
+dplyr::count
+
 ### count number of rows
 msleep %>%
   tally()
@@ -36,7 +38,7 @@ msleep %>%
   group_by(vore) %>%
   summarise_all(mean, na.rm = TRUE)
 
-### using function
+### using anonymous function
 msleep %>%
   group_by(vore) %>%
   summarise_all(~mean(., na.rm = TRUE) + 5)
