@@ -165,6 +165,7 @@ Notable partiicipants:
 * `filter()`
 * `filter_*()`
 * `near()`, `between()`
+* `any_vars()` and `all_vars()`
 
 ---
 # Summarizing and slicing

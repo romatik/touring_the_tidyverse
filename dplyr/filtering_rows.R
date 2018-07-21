@@ -1,6 +1,5 @@
 library(tidyverse)
 
-
 # Filtering ---------------------------------------------------------------
 ### basics
 msleep %>%
@@ -38,7 +37,7 @@ msleep %>%
   select(name, sleep_total) %>%
   filter(str_detect(tolower(name), pattern = "mouse"))
 
-###
+### using multiple predicates
 msleep %>%
   select(name, order, sleep_total:bodywt) %>%
   filter(bodywt > 100, (sleep_total > 15 | order != "Carnivora"))
