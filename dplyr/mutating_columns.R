@@ -43,7 +43,7 @@ msleep %>%
 ###
 msleep %>%
   select(name, sleep_total:bodywt) %>%
-  mutate_if(is.numeric, round)
+  mutate_if(is.numeric, round, digits = 2)
 
 ### scoped + tidyselect
 msleep %>%
@@ -58,7 +58,7 @@ msleep %>%
 
 msleep %>%
   select(name, sleep_total:awake) %>%
-  mutate_at(vars(contains("sleep")), funs(min = .*60))
+  mutate_at(vars(contains("sleep")), funs(min = .*60, max = .*10))
 
 
 ### recoding variables
@@ -80,15 +80,18 @@ msleep %>%
       sleep_total > 10 ~ "long",
       sleep_total > 7 ~ "limited",
       TRUE ~ "short")) %>%
-  mutate(sleep_total_discr = factor(sleep_total_discr, levels = c("short", "limited", "long", "very long")))
+  mutate(sleep_total_discr = factor(sleep_total_discr,
+                                    levels = c("short", "limited", "long", "very long")))
+
 
 ###
 msleep %>%
-  mutate(silly_groups = case_when(
-    brainwt < 0.001 ~ "light_headed",
-    sleep_total > 10 ~ "lazy_sleeper",
-    is.na(sleep_rem) ~ "absent_rem",
-    TRUE ~ "other")) %>%
+  mutate(silly_groups =
+           case_when(
+              brainwt < 0.001 ~ "light_headed",
+              sleep_total > 10 ~ "lazy_sleeper",
+              is.na(sleep_rem) ~ "absent_rem",
+              TRUE ~ "other")) %>%
   count(silly_groups)
 
 ### creating NA's

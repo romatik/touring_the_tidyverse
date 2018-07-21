@@ -143,6 +143,8 @@ Notable participants:
 * `select()`
 * `rename()`
 * `select_*()`
+* `first()`, `last()`, `nth()`
+* `everything()`
 
 ---
 # Transforming columns
@@ -152,6 +154,8 @@ Notable participants:
 * `mutate()`
 * `mutate_*()`
 * `na_if()`
+* `case_when()`
+* `recode()` and `recode_factor()`
 
 ---
 # Filtering rows
