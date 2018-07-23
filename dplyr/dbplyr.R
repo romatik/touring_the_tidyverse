@@ -10,11 +10,12 @@ db <- DBI::dbConnect(RPostgreSQL::PostgreSQL(),
                      port = 5432L,
                      user = "postgres",
                      password = "mysecretpassword")
+
 db_sqlite <- DBI::dbConnect(RSQLite::SQLite(), path = ":memory:")
 
 
-dplyr::copy_to(db, msleep, "msleep")
-dplyr::copy_to(db_sqlite, msleep, "msleep")
+dplyr::copy_to(db, ggplot2::msleep, "msleep")
+dplyr::copy_to(db_sqlite, ggplot2::msleep, "msleep")
 
 
 msleep_tbl_pg <- dplyr::tbl(db, "msleep")
@@ -105,4 +106,10 @@ msleep_tbl_pg %>%
   group_by(vore) %>%
   summarise_if(is.numeric, funs(avg = mean(.)), na.rm = TRUE) %>%
   collect()
+
+### example of compute()
+msleep_tbl_sqlite %>%
+  mutate(anotherwt = bodywt,
+         onemorewt = anotherwt^2) %>%
+  compute()
 
