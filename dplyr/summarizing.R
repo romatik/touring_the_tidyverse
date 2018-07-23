@@ -105,3 +105,39 @@ msleep %>%
 ### slicing
 msleep %>%
   slice(50:55)
+
+### do with arbitrary function
+by_cyl <- group_by(mtcars, cyl)
+do_res <- do(by_cyl, head(., 2)) %>%
+  arrange(cyl)
+
+tidy_res <- by_cyl %>%
+  tidyr::nest() %>%
+  mutate(slices = purrr::map(data, ~head(.x, 2))) %>%
+  tidyr::unnest(slices, .drop = TRUE) %>%
+  arrange(cyl)
+
+names(do_res) %>%
+  purrr::map_lgl(~all(do_res[[.x]] == tidy_res[[.x]])) %>%
+  all()
+
+
+### do with models
+models <- by_cyl %>%
+  do(mod = lm(mpg ~ disp, data = .))
+models
+
+summarise(models, rsq = summary(mod)$r.squared)
+models %>% do(data.frame(coef = coef(.$mod)))
+models %>% do(data.frame(
+  var = names(coef(.$mod)),
+  coef(summary(.$mod)))
+)
+
+by_cyl %>%
+  tidyr::nest() %>%
+  mutate(mdl = purrr::map(data, ~lm(mpg ~ disp, data = .x)),
+         tidied = purrr::map(mdl, broom::tidy),
+         glanced = purrr::map(mdl, broom::glance),
+         augmented = purrr::map(mdl, broom::augment)) %>%
+  tidyr::unnest(augmented)
