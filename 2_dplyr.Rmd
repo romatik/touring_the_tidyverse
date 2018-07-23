@@ -172,16 +172,12 @@ Notable partiicipants:
 
 Notable partiicipants:
 
-* `summarize()`
-* `summarize_*()`
-* `add_tally()`
-* `add_count()`
+* `summarize()` and `summarize_*()`
+* `add_tally()` and `add_count()`
 * `arrange()`
 * `group_by()`
-* `top_n()`
-* `sample_frac()`
-* `sample_n()`
-* `slice()`
+* `top_n()`, `sample_frac()`, `sample_n()`, `slice()`
+* `do()`
 
 ---
 # `dbplyr`
@@ -190,6 +186,7 @@ Notable partiicipants:
 
 * `collect()`
 * `explain()`
+* `compute()`
 * `DBI` and `odbc` packages
 
 
