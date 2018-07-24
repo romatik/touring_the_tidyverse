@@ -93,6 +93,7 @@ msleep_tbl_pg %>%
   summarise_all(~mean(., na.rm = TRUE) + 5)
 
 ### but you can always use native DB-backends functions
+# more info - http://db.rstudio.com/advanced/translation/
 msleep_tbl_pg %>%
   filter(name %like% "Cheetah")
 
