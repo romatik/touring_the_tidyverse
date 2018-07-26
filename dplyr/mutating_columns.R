@@ -19,11 +19,13 @@ msleep %>%
 msleep %>%
   select(name, contains("sleep")) %>%
   rowwise() %>%
-  mutate(avg = mean(c(sleep_rem, sleep_cycle)))
+  mutate(avg = mean(c(sleep_rem, sleep_cycle))) %>%
+  ungroup()
 
 msleep %>%
   select(name, contains("sleep")) %>%
-  mutate(avg = purrr::map2_dbl(sleep_rem, sleep_cycle, ~mean(c(.x, .y))))
+  mutate(avg = purrr::map2_dbl(sleep_rem, sleep_cycle,
+                               ~mean(c(.x, .y))))
 
 msleep %>%
   mutate(anotherwt = bodywt) %>%

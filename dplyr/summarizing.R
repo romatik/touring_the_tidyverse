@@ -68,7 +68,7 @@ msleep %>%
 msleep %>%
   group_by(vore) %>%
   summarise(avg_sleep = mean(sleep_total)) %>%
-  arrange(desc(avg_sleep))
+  arrange(-avg_sleep)
 
 ### arranging inside of each group
 msleep %>%
@@ -77,6 +77,7 @@ msleep %>%
   arrange(desc(sleep_total), .by_group = TRUE)
 
 ### top 5 by average
+
 msleep %>%
   group_by(order) %>%
   summarise(average = mean(sleep_total)) %>%
@@ -140,4 +141,4 @@ by_cyl %>%
          tidied = purrr::map(mdl, broom::tidy),
          glanced = purrr::map(mdl, broom::glance),
          augmented = purrr::map(mdl, broom::augment)) %>%
-  tidyr::unnest(augmented)
+  tidyr::unnest(tidied)

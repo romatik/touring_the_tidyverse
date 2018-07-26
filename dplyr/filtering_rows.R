@@ -67,6 +67,10 @@ msleep %>%
   select(name, sleep_total:sleep_rem, brainwt:bodywt) %>%
   filter_at(vars(sleep_total, sleep_rem), all_vars(.>5))
 
+msleep %>%
+  select(name, sleep_total:sleep_rem, brainwt:bodywt) %>%
+  filter(sleep_total > 5, sleep_rem > 5)
+
 ###
 msleep %>%
   select(name, sleep_total:sleep_rem, brainwt:bodywt) %>%

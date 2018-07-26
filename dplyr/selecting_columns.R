@@ -68,7 +68,8 @@ msleep %>%
 
 ### multiple predicates
 msleep %>%
-  select_if(~is.numeric(.) & mean(., na.rm=TRUE) > 10)
+  select_if(~is.numeric(.),  ~mean(., na.rm=TRUE) > 10) %>%
+  glimpse()
 
 ###
 msleep %>%
@@ -90,7 +91,8 @@ msleep %>%
 # Column names ----------------------------------------------------------------
 ###
 msleep %>%
-  select(animal = name, sleep_total, extinction_threat = conservation) %>%
+  select(animal = name, sleep_total,
+         extinction_threat = conservation) %>%
   glimpse
 
 msleep %>%
