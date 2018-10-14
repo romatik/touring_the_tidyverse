@@ -1,0 +1,106 @@
+---
+title: "Touring tidyverse"
+subtitle: "purrr"
+author: "Misha Balyasin"
+date: "2018/10/23"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, robot, robot-fonts]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+
+---
+background-image: url(https://raw.githubusercontent.com/tidyverse/purrr/master/man/figures/logo.png)
+background-size: 100px
+background-position: 90% 6%
+
+# purrr
+
+is a "...complete and consistent functional programming toolkit for R". It draws inspiration from multiple languages (Haskell, Scala, Javascript, `rlist` package). From vignette:
+
+> However, the goal of purrr is not to try and simulate a purer functional programming language in R; we don’t want to implement a second-class version of Haskell in R. The goal is to give you similar expressiveness to an FP language, while allowing you to write code that looks and works like R.
+
+---
+
+# Why purrr
+
+1. API responses (JSON, XML or any list-like alternatives).
+2. Make lists less `r emo::ji("ghost")`.
+
+---
+# Initial commit of purrr
+
+First commit: `2014-11-30 00:33` by Hadley Wickham.
+
+---
+# Current state
+
+1. `dplyr` replaced `plyr` to specialize on data frames.
+2. Current version - `r packageVersion("purrr")`.
+3. https://github.com/tidyverse/purrr
+4. Developed by __Lionel Henry__, Hadley Wickham.
+5. 700+ commits by 46 contributors.
+
+---
+background-image: url(https://raw.githubusercontent.com/tidyverse/purrr/master/man/figures/logo.png)
+background-size: 100px
+background-position: 90% 6%
+
+# purrr
+
+2 main API's:
+
+1. Working with iteration in principled and safe manner.
+2. Programming over lists.
+
+---
+# Overview of the API
+
+
+```{r purrr_api, echo = FALSE}
+funs <- getNamespaceExports("purrr")
+length(funs[!grepl(x = funs, pattern = "_$")])
+```
+
+--
+.pull-right[
+
+1. Selecting columns.
+2. Transforming columns.
+3. Filtering rows.
+4. Summarizing and slicing.
+5. `dbplyr`.
+
+Based on https://github.com/suzanbaert/RTutorials
+]
+
+---
+# Resources
+
+1. https://dplyr.tidyverse.org/index.html
+2. http://r4ds.had.co.nz/transform.html
+3. https://suzan.rbind.io/2018/01/dplyr-tutorial-1/
+4. https://dplyr.tidyverse.org/reference/index.html
+5. https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf
+6. https://www.nielsenmark.us/2018/07/07/connecting-r-to-postgresql-on-linux/
+7. http://db.rstudio.com/
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
