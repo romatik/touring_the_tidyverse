@@ -39,6 +39,8 @@ is a "...complete and consistent functional programming toolkit for R". It draws
 
 1. API responses (JSON, XML or any list-like alternatives).
 2. Make lists less `r emo::ji("ghost")`.
+3. Abstraction over `for` loops.
+4. Putting all `*apply` functions from base R into more principled framework.
 
 ---
 # Initial commit of purrr
