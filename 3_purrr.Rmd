@@ -75,28 +75,13 @@ funs <- getNamespaceExports("purrr")
 length(funs[!grepl(x = funs, pattern = "_$")])
 ```
 
---
-.pull-right[
-
-1. Selecting columns.
-2. Transforming columns.
-3. Filtering rows.
-4. Summarizing and slicing.
-5. `dbplyr`.
-
-Based on https://github.com/suzanbaert/RTutorials
-]
-
 ---
 # Resources
 
-1. https://dplyr.tidyverse.org/index.html
-2. http://r4ds.had.co.nz/transform.html
-3. https://suzan.rbind.io/2018/01/dplyr-tutorial-1/
-4. https://dplyr.tidyverse.org/reference/index.html
-5. https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf
-6. https://www.nielsenmark.us/2018/07/07/connecting-r-to-postgresql-on-linux/
-7. http://db.rstudio.com/
+1. `purrr` tutorial by Jenny Brian - https://jennybc.github.io/purrr-tutorial/index.html
+2. RStudio cheatsheet - https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf
+3. Parallel processing with `purrr` and `future` - https://www.jottr.org/2017/06/05/many-faced-future/ (also see https://github.com/DavisVaughan/furrr)
+4. `purrr` workshop by Charlotte Wickham - https://www.dropbox.com/sh/062xjv35izc2a92/AAAnC-nzToR1rPekDZipRJSLa?dl=0
 
 ---
 # Contacts
