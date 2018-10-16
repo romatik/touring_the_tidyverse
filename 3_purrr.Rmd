@@ -50,7 +50,6 @@ First commit: `2014-11-30 00:33` by Hadley Wickham.
 ---
 # Current state
 
-1. `dplyr` replaced `plyr` to specialize on data frames.
 2. Current version - `r packageVersion("purrr")`.
 3. https://github.com/tidyverse/purrr
 4. Developed by __Lionel Henry__, Hadley Wickham.
@@ -66,15 +65,17 @@ background-position: 90% 6%
 2 main API's:
 
 1. Working with iteration in principled and safe manner.
-2. Programming over lists.
+2. Programming over lists:
+  1. Modifying functions (adverbs).
+  2. Functional programming.
+  3. Utilities.
 
 ---
 # Overview of the API
 
 
 ```{r purrr_api, echo = FALSE}
-funs <- getNamespaceExports("purrr")
-length(funs[!grepl(x = funs, pattern = "_$")])
+length(getNamespaceExports("purrr"))
 ```
 
 ---
