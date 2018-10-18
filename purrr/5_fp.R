@@ -1,0 +1,9 @@
+accumulate
+accumulate_right
+compose
+partial
+reduce
+reduce_right
+reduce2
+reduce2_right
+negate

@@ -1,0 +1,14 @@
+lift
+lift_dl
+lift_dv
+lift_ld
+lift_lv
+lift_vd
+lift_vl
+possibly
+quietly
+safely
+auto_browse
+as_function
+as_mapper
+as_vector
