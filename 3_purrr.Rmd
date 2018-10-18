@@ -62,13 +62,13 @@ background-position: 90% 6%
 
 # purrr
 
-2 main API's:
+Covering today:
 
 1. Working with iteration in principled and safe manner.
-2. Programming over lists:
-  1. Modifying functions (adverbs).
-  2. Functional programming.
-  3. Utilities.
+2. Predicates collection.
+3. Working with lists + crossing.
+4. Working with mappers/functions.
+5. Functional programming.
 
 ---
 # Overview of the API
