@@ -79,16 +79,15 @@ length(getNamespaceExports("purrr"))
 
 ---
 # Mapping
-https://www.dropbox.com/sh/062xjv35izc2a92/AAAnC-nzToR1rPekDZipRJSLa?dl=0&preview=slides.pdf
-Slide 50 for map
-slide 52 for walk
-slide 54 for map2
-slide 70 for pmap
-slide 72 for invoke_map
 
-https://speakerdeck.com/jennybc/data-rectangling?slide=34 - map
-https://speakerdeck.com/jennybc/data-rectangling?slide=36 - map2
-https://speakerdeck.com/jennybc/data-rectangling?slide=42 - pmap
+Following slides are from the Charlotte Wickham workshop that you can download here:
+
+<a href="https://www.dropbox.com/sh/062xjv35izc2a92/AAAnC-nzToR1rPekDZipRJSLa?dl=0">bit.ly/purrr-rstudioconf</a>
+
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/map.png)
+background-size: 100%
 
 ---
 # Resources
