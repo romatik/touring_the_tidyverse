@@ -69,10 +69,9 @@ background-position: 90% 6%
 Covering today:
 
 1. Working with iteration in principled and safe manner.
-2. Predicates collection.
-3. Working with lists + crossing.
-4. Working with mappers/functions.
-5. Functional programming.
+1. Working with lists + crossing.
+1. Working with mappers/functions.
+1. Functional programming.
 
 ```{r purrr_api, echo = FALSE}
 length(getNamespaceExports("purrr"))
