@@ -140,6 +140,27 @@ reduce2_right
 negate
 
 ---
+
+# Working with lists
+
+---
+
+# Adverbs and mappers
+
+safely
+
+possibly
+
+quietly
+
+auto_browse
+
+lifting
+
+as_mapper
+
+
+---
 # Resources
 
 1. `purrr` tutorial by Jenny Brian - https://jennybc.github.io/purrr-tutorial/index.html

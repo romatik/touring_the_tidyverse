@@ -1,9 +1,50 @@
-accumulate
-accumulate_right
-compose
-partial
-reduce
-reduce_right
-reduce2
-reduce2_right
-negate
+library(magrittr)
+library(purrr)
+
+# reduce ------------------------------------------------------------------
+1:3 %>% reduce(`+`)
+1:10 %>% reduce(`*`)
+
+paste2 <- function(x, y, sep = ".") paste(x, y, sep = sep)
+letters[1:4] %>% reduce(paste2)
+letters[1:4] %>% reduce2(c("-", ".", "-"), paste2)
+letters[1:8] %>% reduce2(c("-----", ".", "----",".", "---", ".", "--"), paste2)
+
+
+# accumulate --------------------------------------------------------------
+1:3 %>% accumulate(`+`)
+1:10 %>% accumulate_right(`*`)
+1:10 %>% accumulate(max, .init = 5)
+
+1:10 %>% accumulate(~ .x)
+1:10 %>% accumulate(~ .y)
+c(100, 1:9) %>% accumulate(~ 1 + .y)
+c(100, 1:9) %>% accumulate(~ 1 + .x)
+
+# For each position of x, I want to count how many numbers were > 5
+x<-c(2,8,4,9,10,6,7,3,1,5)
+accumulate(x > 5, `+`)
+
+# compose -----------------------------------------------------------------
+not_null <- compose(`!`, is.null)
+not_null(4)
+not_null(NULL)
+
+not_null2 <- negate(is.null)
+not_null2(4)
+not_null2(NULL)
+
+
+# partial -----------------------------------------------------------------
+l <- list(1:3, NULL, 5:10)
+
+compact1 <- function(x) discard(x, is.null)
+compact2 <- partial(discard, .p = is.null)
+
+compact1(l)
+compact2(l)
+
+
+
+
+
