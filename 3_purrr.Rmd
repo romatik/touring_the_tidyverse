@@ -69,9 +69,9 @@ background-position: 90% 6%
 Covering today:
 
 1. Working with iteration in principled and safe manner.
+1. Functional programming.
 1. Working with lists + crossing.
 1. Working with mappers/functions.
-1. Functional programming.
 
 ```{r purrr_api, echo = FALSE}
 length(getNamespaceExports("purrr"))
@@ -89,14 +89,65 @@ Following slides are from the Charlotte Wickham workshop that you can download h
 background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/map.png)
 background-size: 100%
 
+# map
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/map2.png)
+background-size: 100%
+
+# map2
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/pmap.png)
+background-size: 100%
+
+# pmap
+
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/walk.png)
+background-size: 100%
+
+# walk
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/invoke_map.png)
+background-size: 100%
+
+# invoke_map
+
+
+---
+
+# Functional programming
+
+accumulate
+
+accumulate_right
+
+compose
+
+partial
+
+reduce
+
+reduce_right
+
+reduce2
+
+reduce2_right
+
+negate
+
 ---
 # Resources
 
 1. `purrr` tutorial by Jenny Brian - https://jennybc.github.io/purrr-tutorial/index.html
-2. RStudio cheatsheet - https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf
-3. Parallel processing with `purrr` and `future` - https://www.jottr.org/2017/06/05/many-faced-future/ (also see https://github.com/DavisVaughan/furrr)
-4. `purrr` workshop by Charlotte Wickham - https://www.dropbox.com/sh/062xjv35izc2a92/AAAnC-nzToR1rPekDZipRJSLa?dl=0
-5. "Master the `tidyverse`" by Garett Grolemund - https://github.com/rstudio-education/master-the-tidyverse/.
+1. RStudio cheatsheet - https://github.com/rstudio/cheatsheets/blob/master/purrr.pdf
+1. Parallel processing with `purrr` and `future` - https://www.jottr.org/2017/06/05/many-faced-future/ (also see https://github.com/DavisVaughan/furrr)
+1. `purrr` workshop by Charlotte Wickham - https://www.dropbox.com/sh/062xjv35izc2a92/AAAnC-nzToR1rPekDZipRJSLa?dl=0
+1. "Master the `tidyverse`" by Garett Grolemund - https://github.com/rstudio-education/master-the-tidyverse/.
+1. `purrr::partial` example by Tyler Bradly - https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
 
 ---
 # Contacts
