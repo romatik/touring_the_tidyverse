@@ -178,7 +178,3 @@ l1 %>% modify_depth(2, "param2") %>% str()
 # elements of the objects at the second level. paste() is effectively
 # mapped at level 3.
 l1 %>% modify_depth(2, ~ pmap(., paste, sep = " / ")) %>% str()
-
-
-at_depth
-vec_depth

@@ -1,12 +1,9 @@
 library(purrr)
 library(repurrrsive)
-suppressPackageStartupMessages(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 
 # map ---------------------------------------------------------------------
 # basic usage of map
-1:10 %>%
-  map(rnorm, n = 10)
-
 1:10 %>%
   map(rnorm, n = 10)
 
@@ -22,7 +19,6 @@ map_at(ex, c("a"), ~.^2)
 map_at(ex, 1, ~.^2)
 
 map_if(ex, function(elm) elm == 3, ~.^2)
-
 
 # got_chars ---------------------------------------------------------------
 got_chars <- got_chars %>%
@@ -48,7 +44,6 @@ birth <- got_chars %>%
   map_chr("born")
 my_fun <- function(x, y) glue::glue("{x} was born {y}")
 map2_chr(nms, birth, my_fun) %>% head()
-
 
 # pmap --------------------------------------------------------------------
 df <- got_chars %>% {
@@ -93,11 +88,9 @@ df %>%
   pmap_chr(my_fun) %>%
   tail()
 
-
 # walk --------------------------------------------------------------------
 1:10 %>%
   walk(~cat("hello"))
-
 
 # imap --------------------------------------------------------------------
 imap_chr(sample(10), ~ paste0(.y, ": ", .x))
@@ -105,8 +98,6 @@ imap_chr(sample(10), ~ paste0(.y, ": ", .x))
 ## .x corresponds to value, .y to name/index
 my_fun <- function(x, y) glue::glue("{x} was born {y}")
 imap_chr(map_chr(got_chars, "born"), my_fun)
-
-
 
 # invoke ------------------------------------------------------------------
 invoke(runif, list(n = 10))
@@ -125,7 +116,6 @@ df <- tibble::tibble(
 )
 df
 invoke_map(df$f, df$params)
-
 
 # lmap --------------------------------------------------------------------
 # https://d33wubrfki0l68.cloudfront.net/1f648d451974f0ed313347b78ba653891cf59b21/8185b/diagrams/subsetting/train.png

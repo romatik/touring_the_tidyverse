@@ -10,7 +10,6 @@ letters[1:4] %>% reduce(paste2)
 letters[1:4] %>% reduce2(c("-", ".", "-"), paste2)
 letters[1:8] %>% reduce2(c("-----", ".", "----",".", "---", ".", "--"), paste2)
 
-
 # accumulate --------------------------------------------------------------
 1:3 %>% accumulate(`+`)
 1:10 %>% accumulate_right(`*`)
@@ -45,6 +44,7 @@ compact1(l)
 compact2(l)
 
 # source https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
+library(dplyr)
 p_funs <- c(0.2, 0.5, 0.8) %>%
   set_names(map_chr(., ~paste0(.x*100, "%"))) %>%
   map(~partial(quantile, probs = .x, na.rm = TRUE))
