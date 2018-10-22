@@ -44,7 +44,16 @@ compact2 <- partial(discard, .p = is.null)
 compact1(l)
 compact2(l)
 
+# source https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
+p_funs <- c(0.2, 0.5, 0.8) %>%
+  set_names(map_chr(., ~paste0(.x*100, "%"))) %>%
+  map(~partial(quantile, probs = .x, na.rm = TRUE))
+p_funs
 
+mtcars %>%
+  group_by(cyl) %>%
+  summarize_at(vars(mpg), funs(!!!p_funs))
 
-
-
+mtcars %>%
+  group_by(cyl) %>%
+  summarize_at(vars(mpg, hp), funs(!!!p_funs))
