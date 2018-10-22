@@ -23,6 +23,33 @@ background-size: 800px
 Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
 
 ---
+
+# Plan of talks
+
+.pull-left[
+## Initial
+1. Wrangle: tidyr
+2. Wrangle: dplyr
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+4. Program: purrr + glue
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+]
+--
+.pull-right[
+## Current
+1. Wrangle: tidyr -- `r emo::ji("check")`
+2. Wrangle: dplyr -- `r emo::ji("check")`
+3. ~~Wrangle: lubridate, hms, blob, forcats, stringr~~
+4. Program: purrr ~~and glue~~ 
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom -- `r emo::ji("construction")`
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+
+]
+
+---
 background-image: url(https://raw.githubusercontent.com/tidyverse/purrr/master/man/figures/logo.png)
 background-size: 100px
 background-position: 90% 6%
@@ -159,6 +186,8 @@ as_mapper
 ---
 
 # Utilities
+
+Too many to list
 
 ---
 # Resources
