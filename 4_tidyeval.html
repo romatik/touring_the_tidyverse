@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touring tidyverse</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Misha Balyasin" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot.css" rel="stylesheet" />
+    <link href="libs/remark-css/robot-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Touring tidyverse
+## tideval
+### Misha Balyasin
+### 2018/10/23
+
+---
+
+
+
+
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+
+---
+
+# Plan of talks
+
+.pull-left[
+## Initial
+1. Wrangle: tidyr
+2. Wrangle: dplyr
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+4. Program: purrr + glue
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+]
+--
+.pull-right[
+## Current
+1. Wrangle: tidyr -- ✅
+2. Wrangle: dplyr -- ✅
+3. ~~Wrangle: lubridate, hms, blob, forcats, stringr~~
+4. Program: purrr ~~and glue~~ -- ✅
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom -- 🚧
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+
+]
+---
+background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/figures/rlang.png)
+background-size: 100px
+background-position: 90% 6%
+
+# rlang
+
+The rlang package provides tools to work with core language features of R and the tidyverse:
+
+1. The tidy eval framework, which is a well-founded system for non-standard evaluation built on quasiquotation (!!) and quoted arguments (enquo()).
+1. User-friendly error reporting with backtraces and chained errors (abort(), trace_back(), with_abort()).
+1. A consistent API for working with base types. Note that overall this is a work in progress that is still in flux
+
+---
+
+# Why tidyeval
+
+1. Programming over quoting `tidyverse` functions (`dplyr`, `ggplot2`).
+1. Robust and theoretically grounded metaprogramming framework.
+
+---
+# Initial commit of rlang/lazyeval
+
+First commit: `2014-08-12 21:15` by Hadley Wickham.
+
+Current iteration of rlang is not the first attempt to introduce quasiquotation.
+
+---
+# Current state
+
+1. Current version - 0.3.0.1.
+1. https://github.com/r-lib/rlang
+1. Developed by __Lionel Henry__, Hadley Wickham.
+1. 2900+ commits by 31 contributors.
+
+---
+background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/figures/rlang.png)
+background-size: 100px
+background-position: 90% 6%
+
+# rlang
+
+Covering today:
+
+1. Working with iteration in principled and safe manner.
+1. Functional programming.
+1. Adverbs and mappers.
+1. Utilities for working with lists.
+
+---
+# Resources
+
+1. `tidyeval` book - https://tidyeval.tidyverse.org/ or `tidyeval` post - https://rpubs.com/lionel-/tidyeval-introduction
+1. `tidyeval` webinar - https://www.rstudio.com/resources/webinars/tidy-eval/
+1. "Tidy evaluation in 5 minutes" by Hadley Wickham - https://www.youtube.com/watch?v=nERXS3ssntw
+1.  Metaprogramming chapters in "Advanced R" - https://adv-r.hadley.nz/meta.html
+1. "Master the `tidyverse`" by Garett Grolemund - https://github.com/rstudio-education/master-the-tidyverse/.
+1. `purrr::partial` example by Tyler Bradly - https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

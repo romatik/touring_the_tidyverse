@@ -1,0 +1,115 @@
+---
+title: "Touring tidyverse"
+subtitle: "tideval"
+author: "Misha Balyasin"
+date: "2018/10/23"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, robot, robot-fonts]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
+background-size: 800px
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+
+---
+
+# Plan of talks
+
+.pull-left[
+## Initial
+1. Wrangle: tidyr
+2. Wrangle: dplyr
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+4. Program: purrr + glue
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+]
+--
+.pull-right[
+## Current
+1. Wrangle: tidyr -- `r emo::ji("check")`
+2. Wrangle: dplyr -- `r emo::ji("check")`
+3. ~~Wrangle: lubridate, hms, blob, forcats, stringr~~
+4. Program: purrr ~~and glue~~ -- `r emo::ji("check")`
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom -- `r emo::ji("construction")`
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+
+]
+---
+background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/figures/rlang.png)
+background-size: 100px
+background-position: 90% 6%
+
+# rlang
+
+The rlang package provides tools to work with core language features of R and the tidyverse:
+
+1. The tidy eval framework, which is a well-founded system for non-standard evaluation built on quasiquotation (!!) and quoted arguments (enquo()).
+1. User-friendly error reporting with backtraces and chained errors (abort(), trace_back(), with_abort()).
+1. A consistent API for working with base types. Note that overall this is a work in progress that is still in flux
+
+---
+
+# Why tidyeval
+
+1. Programming over quoting `tidyverse` functions (`dplyr`, `ggplot2`).
+1. Robust and theoretically grounded metaprogramming framework.
+
+---
+# Initial commit of rlang/lazyeval
+
+First commit: `2014-08-12 21:15` by Hadley Wickham.
+
+Current iteration of rlang is not the first attempt to introduce quasiquotation.
+
+---
+# Current state
+
+1. Current version - `r packageVersion("rlang")`.
+1. https://github.com/r-lib/rlang
+1. Developed by __Lionel Henry__, Hadley Wickham.
+1. 2900+ commits by 31 contributors.
+
+---
+background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/figures/rlang.png)
+background-size: 100px
+background-position: 90% 6%
+
+# rlang
+
+Covering today:
+
+1. Working with iteration in principled and safe manner.
+1. Functional programming.
+1. Adverbs and mappers.
+1. Utilities for working with lists.
+
+---
+# Resources
+
+1. `tidyeval` book - https://tidyeval.tidyverse.org/ or `tidyeval` post - https://rpubs.com/lionel-/tidyeval-introduction
+1. `tidyeval` webinar - https://www.rstudio.com/resources/webinars/tidy-eval/
+1. "Tidy evaluation in 5 minutes" by Hadley Wickham - https://www.youtube.com/watch?v=nERXS3ssntw
+1.  Metaprogramming chapters in "Advanced R" - https://adv-r.hadley.nz/meta.html
+1. "Master the `tidyverse`" by Garett Grolemund - https://github.com/rstudio-education/master-the-tidyverse/.
+1. `purrr::partial` example by Tyler Bradly - https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
