@@ -6,15 +6,23 @@ date: "2018/10/23"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, robot, robot-fonts]
+    css: xaringan-themer.css
     nature:
-      highlightStyle: github
+      highlightStyle: solarized-dark
       highlightLines: true
-      countIncrementalSlides: false
+      countIncrementalSlides: false  
 ---
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+solarized_dark(
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("IBM Plex Mono")
+)
 ```
 
 background-image: url(http://r4ds.had.co.nz/diagrams/data-science.png)
@@ -104,8 +112,6 @@ Covering today:
 1. `tidyeval` webinar - https://www.rstudio.com/resources/webinars/tidy-eval/
 1. "Tidy evaluation in 5 minutes" by Hadley Wickham - https://www.youtube.com/watch?v=nERXS3ssntw
 1.  Metaprogramming chapters in "Advanced R" - https://adv-r.hadley.nz/meta.html
-1. "Master the `tidyverse`" by Garett Grolemund - https://github.com/rstudio-education/master-the-tidyverse/.
-1. `purrr::partial` example by Tyler Bradly - https://tbradley1013.github.io/2018/10/01/calculating-quantiles-for-groups-with-dplyr-summarize-and-purrr-partial/
 
 ---
 # Contacts
