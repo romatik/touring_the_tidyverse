@@ -258,3 +258,23 @@ unselect <- function(.data, ...){
 unselect(tibble::as_tibble(mtcars), mpg:disp, qsec)
 
 # Quosures capture expression and environment.
+my_mutate <- function(df, var){
+  n <- 10
+  var <- rlang::enexpr(var)
+  mutate(df, !!var)
+}
+
+df <- tibble(x = 1)
+n <- 100
+my_mutate(df, x + n)
+
+my_mutate2 <- function(df, var){
+  n <- 10
+  var <- rlang::enquo(var)
+  mutate(df, !!var)
+}
+
+df <- tibble(x = 1)
+n <- 100
+my_mutate2(df, x + n)
+
