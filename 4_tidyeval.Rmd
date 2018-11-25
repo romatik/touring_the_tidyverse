@@ -73,8 +73,7 @@ The rlang package provides tools to work with core language features of R and th
 
 # Why tidyeval
 
-1. Programming over quoting `tidyverse` functions (`dplyr`, `ggplot2`).
-1. Robust and theoretically grounded metaprogramming framework.
+1. Programming over quoting `tidyverse` functions (e.g., `dplyr`, `ggplot2`).
 
 ---
 # Initial commit of rlang/lazyeval
@@ -96,9 +95,17 @@ background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/f
 background-size: 100px
 background-position: 90% 6%
 
-# rlang
+# 5 big ideas of tidyeval <sup>1</sup>
 
-Covering today:
+1. R code is a tree.
+1. You can capture the tree by quoting.
+1. Unquoting makes it easy to build trees.
+1. Quoting + unquoting to write functions.
+1. Quosures capture expression and environment.
+
+.footnote[
+[1] https://www.youtube.com/watch?v=nERXS3ssntw
+]
 
 ---
 # Resources
