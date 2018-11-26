@@ -104,18 +104,8 @@ ggplot(mtcars, aes(disp, drat)) +
   geom_point() +
   facet_grid(vars(!!x_var))  # Refer to x_var
 
-## `qq_show()`
-rlang::qq_show(mtcars %>% group_by(!!x_var))
-
-rlang::qq_show(data %>% summarise(mean = mean(!!y_var)))
-
-rlang::qq_show(ggplot(mtcars, aes(!!x_var, !!y_var)))
-
-rlang::qq_show(facet_grid(vars(!!x_var)))
-
 ## lobstr
 library(lobstr)
-
 a <- 2
 
 ## R code is a tree
@@ -130,6 +120,17 @@ a <- expr(b + 1)
 ## Unquoting makes it easy to build trees
 ast(1 + !!a * !!a)
 ast(1 + a * a)
+
+
+## `qq_show()`
+rlang::qq_show(mtcars %>% group_by(!!x_var))
+
+rlang::qq_show(data %>% summarise(mean = mean(!!y_var)))
+
+rlang::qq_show(ggplot(mtcars, aes(!!x_var, !!y_var)))
+
+rlang::qq_show(facet_grid(vars(!!x_var)))
+
 
 
 # Quoting + unquoting to write functions. ---------------------------------
@@ -277,4 +278,3 @@ my_mutate2 <- function(df, var){
 df <- tibble(x = 1)
 n <- 100
 my_mutate2(df, x + n)
-
