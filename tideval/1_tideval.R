@@ -1,5 +1,5 @@
-library(magrittr)
 library(rlang)
+library(dplyr)
 
 # Motivation --------------------------------------------------------------
 ## duplicated code

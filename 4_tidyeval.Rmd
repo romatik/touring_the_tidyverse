@@ -70,18 +70,21 @@ The rlang package provides tools to work with core language features of R and th
 1. A consistent API for working with base types. Note that overall this is a work in progress that is still in flux.
 
 ---
-
-# Why tidyeval
-
-1. Programming over quoting `tidyverse` functions (e.g., `dplyr`, `ggplot2`).
-
----
 # Initial commit of rlang/lazyeval
 
 First commit: `2014-08-12 21:15` by Hadley Wickham.
 
 Current iteration of rlang is not the first attempt to introduce quasiquotation.
-
+```{r, eval=FALSE}
+library(lazyeval)
+f = function(col1, col2, new_col_name) {
+    mutate_call = lazyeval::interp(~ a + b, 
+                                   a = as.name(col1), 
+                                   b = as.name(col2))
+    mtcars %>% mutate_(.dots = setNames(list(mutate_call), 
+                                        new_col_name))
+}
+```
 ---
 # Current state
 
@@ -89,6 +92,12 @@ Current iteration of rlang is not the first attempt to introduce quasiquotation.
 1. https://github.com/r-lib/rlang
 1. Developed by __Lionel Henry__, Hadley Wickham.
 1. 2900+ commits by 31 contributors.
+
+---
+
+# Why tidyeval
+
+1. Programming over quoting `tidyverse` functions (e.g., `dplyr`, `ggplot2`).
 
 ---
 background-image: url(https://raw.githubusercontent.com/r-lib/rlang/master/man/figures/rlang.png)

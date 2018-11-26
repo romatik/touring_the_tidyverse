@@ -1,5 +1,5 @@
-library(magrittr)
 library(rlang)
+library(dplyr)
 
 # Motivation --------------------------------------------------------------
 ## duplicated code
@@ -91,7 +91,6 @@ y_var <- quote(mpg)
 x_var
 y_var
 
-library("dplyr")
 by_cyl <- mtcars %>%
   group_by(!!x_var) %>%            # Refer to x_var
   summarise(mean = mean(!!y_var))  # Refer to y_var
