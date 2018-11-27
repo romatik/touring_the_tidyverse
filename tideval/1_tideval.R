@@ -172,7 +172,7 @@ grouped_mean2(mtcars, disp, cyl, am)
 unselect <- function(.data, ...){
   dots <- rlang::enquos(...) %>%
     purrr::map(function(variable){
-      rlang::expr(-!!variable)
+      rlang::quo(-!!variable)
     })
   .data %>%
     dplyr::select(!!!dots)
