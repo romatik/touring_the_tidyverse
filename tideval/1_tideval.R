@@ -121,10 +121,18 @@ grouped_mean <- function(data, group_var, summary_var) {
 ## working with dots
 
 ### evaluate
+materialise <- function(data, ...) {
+  dots <- list(...)
+  dots
+}
 
 materialise(mtcars, 1 + 2, important_name = letters)
 
 ### quote
+capture <- function(data, ...) {
+  dots <- enquos(...)
+  dots
+}
 
 capture(mtcars, 1 + 2, important_name = letters)
 
@@ -138,6 +146,14 @@ forwardee <- function(foo, bar, ...) {
 forward(mtcars, bar = 100, 1, 2, 3)
 
 ## quoting multiple arguments with tidyeval
+grouped_mean2 <- function(data, summary_var, ...) {
+  summary_var <- enquo(summary_var)
+  group_vars <- enquos(...)
+
+  data %>%
+    group_by(!!group_vars) %>%
+    summarise(mean = mean(!!summary_var))
+}
 
 vars <- list(
   quote(cyl),
@@ -146,6 +162,17 @@ vars <- list(
 rlang::qq_show(group_by(!!vars))
 
 rlang::qq_show(group_by(!!!vars))
+
+grouped_mean2 <- function(.data, .summary_var, ...) {
+  summary_var <- enquo(.summary_var)
+  group_vars <- enquos(...)
+
+  .data %>%
+    group_by(!!!group_vars) %>%
+    summarise(mean = mean(!!summary_var))
+}
+
+grouped_mean2(mtcars, disp, cyl, am)
 
 # Modifying names ---------------------------------------------------------
 ##
