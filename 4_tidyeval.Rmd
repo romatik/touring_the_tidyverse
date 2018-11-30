@@ -1,8 +1,8 @@
 ---
 title: "Touring tidyverse"
-subtitle: "tideval"
+subtitle: "tidyeval"
 author: "Misha Balyasin"
-date: "2018/10/23"
+date: "2018/11/29"
 output:
   xaringan::moon_reader:
     lib_dir: libs
