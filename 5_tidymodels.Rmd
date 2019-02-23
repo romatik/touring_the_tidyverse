@@ -1,0 +1,106 @@
+---
+title: "Touring tidyverse"
+subtitle: "tidyeval"
+author: "Misha Balyasin"
+date: "2018/11/29"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: solarized-dark
+      highlightLines: true
+      countIncrementalSlides: false  
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(magrittr)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+solarized_dark(
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("IBM Plex Mono")
+)
+```
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+
+```{r, echo=FALSE, fig.width=15}
+knitr::include_url("https://speakerdeck.com/player/f84eb52f58b647929aa6fb3da5324a28?title=false&skipResize=true&slide=53")
+```
+
+
+---
+
+# Plan of talks
+
+.pull-left[
+## Initial
+1. Wrangle: tidyr
+2. Wrangle: dplyr
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+4. Program: purrr + glue
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+]
+--
+.pull-right[
+## Current
+1. Wrangle: tidyr -- `r emo::ji("check")`
+2. Wrangle: dplyr -- `r emo::ji("check")`
+3. ~~Wrangle: lubridate, hms, blob, forcats, stringr~~
+4. Program: purrr and glue -- `r emo::ji("check")`
+5. Program: tidyeval --`r emo::ji("check")`
+6. **Model: tidymodels** 
+7. Beyond tidyverse (tibbletime, tidytext, janitor) -- `r emo::ji("construction")`
+
+]
+---
+background-image: url(https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidymodels.png)
+background-size: 100px
+background-position: 90% 6%
+
+# tidymodels
+
+tidymodels is a "meta-package" for modeling and statistical analysis that share the underlying design philosophy, grammar, and data structures of the tidyverse.
+
+1. `broom` takes the messy output of built-in functions in R, such as lm, nls, or t.test, and turns them into tidy data frames.
+1. `infer` is a modern approach to statistical inference.
+1. `recipes` is a general data preprocessor with a modern interface. It can create model matrices that incorporate feature engineering, imputation, and other help tools.
+1. `rsample` has infrastructure for resampling data so that models can be assessed and empirically validated.
+1. `yardstick` contains tools for evaluating models (e.g. accuracy, RMSE, etc.)
+1. `tidypredict` translates some model prediction equations to SQL for high-performance computing.
+1. `tidyposterior` can be used to compare models using resampling and Bayesian analysis.
+1. `tidytext` contains tidy tools for quantitative text analysis, including basic text summarization, sentiment analysis, and text modeling.
+
+---
+# Current state
+
+1. Current version - `r packageVersion("tidymodels")`.
+1. https://github.com/r-lib/tidymodels
+1. Developed by __Max Kuhn__, Hadley Wickham.
+1. Very early stage.
+
+```{r, echo = FALSE}
+tibble::tibble(package = c("broom", "infer", "recipes", "rsample", "yardstick", "tidypredict", "tidyposterior", "tidytext", "parsnip")) %>%
+  dplyr::mutate(version = purrr::map_chr(package, ~as.character(packageVersion(.x))))
+```
+
+
+---
+# Resources
+
+1. https://tidymodels.github.io/model-implementation-principles/index.html
+1. Applied Machine Learning workshop - https://github.com/topepo/rstudio-conf-2019
+1. https://github.com/tidymodels/tidymodels
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
