@@ -26,6 +26,12 @@ solarized_dark(
 )
 ```
 
+# Job plug
+
+https://civey.breezy.hr/p/72daa92b6b37-r-engineer-data-science-f-m-d
+
+---
+
 Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
 
 ```{r, echo=FALSE, fig.width=15}
@@ -90,6 +96,9 @@ tibble::tibble(package = c("broom", "infer", "recipes", "rsample", "yardstick", 
   dplyr::mutate(version = purrr::map_chr(package, ~as.character(packageVersion(.x))))
 ```
 
+---
+
+# Extended demo
 
 ---
 # Resources
