@@ -75,6 +75,7 @@ tidymodels is a "meta-package" for modeling and statistical analysis that share 
 1. `tidypredict` translates some model prediction equations to SQL for high-performance computing.
 1. `tidyposterior` can be used to compare models using resampling and Bayesian analysis.
 1. `tidytext` contains tidy tools for quantitative text analysis, including basic text summarization, sentiment analysis, and text modeling.
+1. `dials` contains tools to create and manage values of tuning parameters and is designed to integrate well with the parsnip package.
 
 ---
 # Current state
@@ -86,18 +87,19 @@ tidymodels is a "meta-package" for modeling and statistical analysis that share 
 
 
 ```
-## # A tibble: 9 x 2
-##   package       version
-##   &lt;chr&gt;         &lt;chr&gt;  
-## 1 broom         0.5.1  
-## 2 infer         0.4.0  
-## 3 recipes       0.1.4  
-## 4 rsample       0.0.4  
-## 5 yardstick     0.0.2  
-## 6 tidypredict   0.3.0  
-## 7 tidyposterior 0.0.2  
-## 8 tidytext      0.2.0  
-## 9 parsnip       0.0.1
+## # A tibble: 10 x 2
+##    package       version
+##    &lt;chr&gt;         &lt;chr&gt;  
+##  1 broom         0.5.1  
+##  2 infer         0.4.0  
+##  3 recipes       0.1.4  
+##  4 rsample       0.0.4  
+##  5 yardstick     0.0.2  
+##  6 tidypredict   0.3.0  
+##  7 tidyposterior 0.0.2  
+##  8 tidytext      0.2.0  
+##  9 parsnip       0.0.1  
+## 10 dials         0.0.2
 ```
 
 ---
