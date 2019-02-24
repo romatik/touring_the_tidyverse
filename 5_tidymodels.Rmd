@@ -104,16 +104,19 @@ tibble::tibble(package = c("broom", "infer", "recipes", "rsample", "yardstick", 
 1. [`mlr`](https://github.com/mlr-org/mlr)
 1. [`scikit-learn`](https://scikit-learn.org/stable/index.html)
 1. Apache Spark with, e.g., [`sparklyr`](https://spark.rstudio.com/)
-1. [MLflow`](https://mlflow.org/docs/latest/tutorial.html)
+1. [MLflow](https://mlflow.org/docs/latest/tutorial.html)
+1. [CRAN Machine Learning taskview](https://cran.r-project.org/web/views/MachineLearning.html)
+1. More?
 
 
 ---
-
 # Extended demo
 
 We will have a (very) condensed walkthrough of 2-day workshop "Applied Machine Learning" by Max Kuhn that he had during `rstudio::conf(2019L)`.
 
 This should give you an idea about what `tidymodels` is planning to be and what is possible already now.
+
+This is **NOT** a Machine Learning tutorial!
 
 ---
 # Resources
