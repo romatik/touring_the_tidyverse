@@ -26,6 +26,15 @@ solarized_dark(
 )
 ```
 
+# Plan for today
+
+1. Brief intro to `tidymodels`.
+1. Part 1 of the demo: `dials` + `parsnip`.
+1. Break.
+1. Part 2 of the demo: `recipes`.
+1. Extracurricular activities.
+
+---
 # Job plug
 
 https://civey.breezy.hr/p/72daa92b6b37-r-engineer-data-science-f-m-d
@@ -37,7 +46,6 @@ Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
 ```{r, echo=FALSE, fig.width=15}
 knitr::include_url("https://speakerdeck.com/player/f84eb52f58b647929aa6fb3da5324a28?title=false&skipResize=true&slide=53")
 ```
-
 
 ---
 
@@ -76,7 +84,7 @@ tidymodels is a "meta-package" for modeling and statistical analysis that share 
 
 1. `broom` takes the messy output of built-in functions in R, such as lm, nls, or t.test, and turns them into tidy data frames.
 1. `infer` is a modern approach to statistical inference.
-1. `recipes` is a general data preprocessor with a modern interface. It can create model matrices that incorporate feature engineering, imputation, and other help tools.
+1. `recipes` is a general data preprocessor with a modern interface. 
 1. `rsample` has infrastructure for resampling data so that models can be assessed and empirically validated.
 1. `yardstick` contains tools for evaluating models (e.g. accuracy, RMSE, etc.)
 1. `tidypredict` translates some model prediction equations to SQL for high-performance computing.
