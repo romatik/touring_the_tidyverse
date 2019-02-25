@@ -6,14 +6,12 @@ ames <-
   dplyr::select(-matches("Qu"))
 nrow(ames)
 
-# Make sure that you get the same random numbers
 set.seed(4595)
 data_split <- rsample::initial_split(ames, strata = "Sale_Price")
 data_split
 
 ames_train <- rsample::training(data_split)
 
-# let's do it for one
 simple_lm <- lm(log10(Sale_Price) ~ Longitude + Latitude, data = ames_train)
 simple_lm_values <- broom::augment(simple_lm)
 
@@ -59,10 +57,8 @@ compute_pred <- function(split, model) {
   # Extract the assessment set
   assess <- rsample::assessment(split) %>%
     dplyr::mutate(Sale_Price_Log = log10(Sale_Price))
-
   # Compute predictions (a df is returned)
   pred <- predict(model, new_data = assess)
-
   dplyr::bind_cols(assess, pred)
 }
 
@@ -79,7 +75,6 @@ compute_perf <- function(pred_df) {
   # Create a function that calculates
   # rmse and rsq and returns a data frame
   numeric_metrics <- yardstick::metric_set(yardstick::rmse, yardstick::rsq)
-
   numeric_metrics(
     pred_df,
     truth = Sale_Price_Log,
@@ -111,7 +106,6 @@ holdout_results <-
 ames_train_log <- ames_train %>%
   dplyr::mutate(Sale_Price_Log = log10(Sale_Price))
 
-
 spec_knn <- parsnip::nearest_neighbor(neighbors = 2) %>%
   parsnip::set_engine("kknn")
 spec_knn
@@ -134,11 +128,8 @@ repredicted %>%
 
 cv_splits <- cv_splits %>%
   dplyr::mutate(
-    # Fit a knn model for each split
     models_knn = purrr::map(splits, fit_model, spec_knn),
-    # Generate predictions on the assessment set
     pred_knn = purrr::map2(splits, models_knn, compute_pred),
-    # Calculation performance
     perf_knn = purrr::map(pred_knn, compute_perf)
   )
 
@@ -202,13 +193,15 @@ spec_knn_varying <- parsnip::nearest_neighbor(
   neighbors = parsnip::varying()
 ) %>%
   parsnip::set_engine("kknn") %>%
-  parsnip::set_mode("regression")  # not required
+  parsnip::set_mode("regression")
+spec_knn_varying
 
 param_grid <-
   param_grid %>%
   dplyr::mutate(
     specs = merge(., spec_knn_varying)
   )
+param_grid
 
 print(param_grid, n = 4)
 param_grid$specs[[20]]
@@ -221,7 +214,6 @@ fit_one_spec_one_split <- function(spec, split) {
   mod <- fit_model(split, spec)
   pred_df <- compute_pred(split, mod)
   perf_df <- compute_perf(pred_df)
-
   # pull out only rmse
   perf_df %>%
     dplyr::filter(.metric == "rmse") %>%
@@ -271,7 +263,8 @@ resampled_grid <- fit_all_specs_all_splits(
   spec_df = param_grid
 )
 
-resampled_grid %>% dplyr::slice(1:6)
+resampled_grid %>%
+  dplyr::slice(1:6)
 
 # Keep the unnested version
 unnested_grid <-
@@ -279,7 +272,8 @@ unnested_grid <-
   tidyr::unnest(spec_perf) %>%
   dplyr::select(-specs)
 
-unnested_grid %>% slice(1:6)
+unnested_grid %>%
+  dplyr::slice(1:6)
 
 rmse_by_neighbors <-
   unnested_grid %>%
