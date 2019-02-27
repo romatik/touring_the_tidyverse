@@ -11,7 +11,9 @@ data_split <- rsample::initial_split(ames, strata = "Sale_Price")
 data_split
 
 ames_train <- rsample::training(data_split)
+nrow(ames_train)
 
+# let's do it for 1
 simple_lm <- lm(log10(Sale_Price) ~ Longitude + Latitude, data = ames_train)
 simple_lm_values <- broom::augment(simple_lm)
 
@@ -22,7 +24,6 @@ cv_splits <- rsample::vfold_cv(
   v = 10,
   strata = "Sale_Price"
 )
-
 cv_splits
 
 pryr::object_size(ames_train)
@@ -45,6 +46,8 @@ spec_stan
 
 # fit ---------------------------------------------------------------------
 geo_form <- log10(Sale_Price) ~ Latitude + Longitude
+
+# fit on analysis part
 fit_model <- function(split, spec, formula = geo_form) {
   parsnip::fit(
     object = spec,
@@ -53,6 +56,7 @@ fit_model <- function(split, spec, formula = geo_form) {
   )
 }
 
+# predict on assessment part
 compute_pred <- function(split, model) {
   # Extract the assessment set
   assess <- rsample::assessment(split) %>%
@@ -73,7 +77,7 @@ cv_splits <-  cv_splits %>%
 # performance -------------------------------------------------------------
 compute_perf <- function(pred_df) {
   # Create a function that calculates
-  # rmse and rsq and returns a data frame
+  # rmse and rsq and returns a _data frame_
   numeric_metrics <- yardstick::metric_set(yardstick::rmse, yardstick::rsq)
   numeric_metrics(
     pred_df,
@@ -95,12 +99,6 @@ cv_splits %>%
     .avg = mean(value),
     .sd = sd(value)
   )
-
-holdout_results <-
-  cv_splits %>%
-  tidyr::unnest(pred_lm) %>%
-  dplyr::mutate(.resid = Sale_Price_Log - .pred)
-
 
 # dials -------------------------------------------------------------------
 ames_train_log <- ames_train %>%
@@ -128,6 +126,7 @@ repredicted %>%
 
 cv_splits <- cv_splits %>%
   dplyr::mutate(
+    # same functions
     models_knn = purrr::map(splits, fit_model, spec_knn),
     pred_knn = purrr::map2(splits, models_knn, compute_pred),
     perf_knn = purrr::map(pred_knn, compute_perf)
@@ -143,6 +142,7 @@ cv_splits %>%
     .estimate_sd = sd(.estimate)
   )
 
+# let's compare lm and kknn
 extract_rmse <- function(perf_list) {
   perf_list %>%
     dplyr::bind_rows() %>%
@@ -166,6 +166,8 @@ ggplot(rs_comp, aes(x = Model, y = rmse, group = Resample, col = Resample)) +
 
 t.test(rmse_lm, rmse_knn, paired = TRUE)
 
+
+# can we do better? -------------------------------------------------------
 #    ├── Create a set of candidate tuning parameter values
 #    └── For each resample
 #    │   ├── Split the data into analysis and assessment sets
@@ -311,6 +313,7 @@ best_spec <-
   dplyr::filter(neighbors == best_neighbor_value) %>%
   dplyr::pull(specs) %>%
   .[[1]]
+best_spec
 
 parsnip::fit(best_spec, geo_form, ames_train)
 
