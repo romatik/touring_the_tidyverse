@@ -92,6 +92,9 @@ background-size: 100%
 This is Codd's 3rd normal form.
 
 ---
+
+# tidy projects on CRAN
+
 ```{r}
 library(magrittr)
 res <- tools::CRAN_package_db() %>%
@@ -101,7 +104,6 @@ res <- tools::CRAN_package_db() %>%
   dplyr::select(Package, Description)
 
 nrow(res)
-res$Package
 ```
 
 
