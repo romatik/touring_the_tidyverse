@@ -1,0 +1,108 @@
+---
+title: "Touring the tidyverse"
+subtitle: "Beyond Tidyverse"
+author: "Misha Balyasin"
+date: "2019/04/16"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: solarized-dark
+      highlightLines: true
+      countIncrementalSlides: false  
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(magrittr)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+solarized_dark(
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("IBM Plex Mono")
+)
+```
+
+https://stackoverflow.com/questions/11560865/list-and-description-of-all-packages-in-cran-from-within-r
+
+```{r}
+library(magrittr)
+res <- utils::available.packages() %>%
+  tibble::as_tibble() %>%
+  dplyr::filter(grepl("tidy", Package))
+```
+
+---
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
+
+```{r, echo=TRUE, fig.width=15}
+knitr::include_url("https://speakerdeck.com/player/f84eb52f58b647929aa6fb3da5324a28?title=false&skipResize=true&slide=53")
+```
+
+---
+
+# Plan of talks
+
+.pull-left[
+## Initial
+1. Wrangle: tidyr
+2. Wrangle: dplyr
+3. Wrangle: lubridate, hms, blob, forcats, stringr
+4. Program: purrr + glue
+5. Program: tidyeval 
+6. Model: rsample, tidyposterior, recipes, broom
+7. Beyond tidyverse (tibbletime, tidytext, janitor)
+]
+--
+.pull-right[
+## Current
+1. Wrangle: tidyr -- `r emo::ji("check")`
+2. Wrangle: dplyr -- `r emo::ji("check")`
+3. ~~Wrangle: lubridate, hms, blob, forcats, stringr~~
+4. Program: purrr and glue -- `r emo::ji("check")`
+5. Program: tidyeval --`r emo::ji("check")`
+6. Model: tidymodels --`r emo::ji("check")`
+7. **Beyond tidyverse**
+]
+---
+# Tidy manifesto<sup>1</sup>
+
+1. Reuse existing data structures.
+2. Compose simple functions with the pipe.
+  - Strive to keep functions as simple as possible.
+  - Avoid mixing side-effects with transformations.
+  - Function names should be verbs.
+3. Embrace R typical functional programming.
+  - Immutable objects and copy-on-modify semantics.
+  - The generic functions provided by S3 and S4. 
+  - Tools that abstract over for-loops.
+4. Design for humans.
+  - Invest time in naming your functions.
+  - Favour explicit, lengthy names, over short, implicit, names.
+  - Think about how autocomplete can also make an API that’s easy to write.
+
+.footnote[
+[1] https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html
+]
+
+---
+# Tidy data
+
+1. Each variable forms a column.
+
+2. Each observation forms a row.
+
+3. Each type of observational unit forms a table.
+
+This is Codd's 3rd normal form.
+
+---
+# Contacts
+
+http://mishabalyasin.com/
+
+Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
