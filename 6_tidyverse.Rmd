@@ -12,6 +12,8 @@ output:
       highlightLines: true
       countIncrementalSlides: false  
 ---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/github_project.png)
+background-size: 100%
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -25,23 +27,12 @@ solarized_dark(
   code_font_google   = google_font("IBM Plex Mono")
 )
 ```
-
-https://stackoverflow.com/questions/11560865/list-and-description-of-all-packages-in-cran-from-within-r
-
-```{r}
-library(magrittr)
-res <- utils::available.packages() %>%
-  tibble::as_tibble() %>%
-  dplyr::filter(grepl("tidy", Package))
-```
-
----
-
 Slides, markdown and code - https://github.com/romatik/touring_the_tidyverse
 
-```{r, echo=TRUE, fig.width=15}
-knitr::include_url("https://speakerdeck.com/player/f84eb52f58b647929aa6fb3da5324a28?title=false&skipResize=true&slide=53")
-```
+
+---
+background-image: url(https://raw.githubusercontent.com/romatik/touring_the_tidyverse/master/img/tidyverse.png)
+background-size: 100%
 
 ---
 
@@ -99,6 +90,20 @@ knitr::include_url("https://speakerdeck.com/player/f84eb52f58b647929aa6fb3da5324
 3. Each type of observational unit forms a table.
 
 This is Codd's 3rd normal form.
+
+---
+```{r}
+library(magrittr)
+res <- tools::CRAN_package_db() %>%
+  tibble::as_tibble(.name_repair = "unique") %>%
+  dplyr::filter(stringr::str_detect(Package, "tidy") | 
+                  stringr::str_detect(Description, "tidy")) %>%
+  dplyr::select(Package, Description)
+
+nrow(res)
+res$Package
+```
+
 
 ---
 # Contacts
