@@ -122,6 +122,12 @@ dplyr::count(cleaned, area, sort = TRUE)  %>%
   gt::gt() 
 ```
 
+---
+# Spotlight
+
+1. `janitor` + `skimr` for data exploration.
+1. `tsiblle` for time-series.
+1. `tidytext` for NLP.
 
 ---
 # Contacts
