@@ -1,30 +1,30 @@
-Package,Description,area,
+Package,Description,area
 alfred,"Provides direct access to the ALFRED (<https://alfred.stlouisfed.org>) and FRED (<https://fred.stlouisfed.org>) databases.
-    Its functions return tidy data frames for different releases of the specified time series. 
-    Note that this product uses the FRED© API but is not endorsed or certified by the Federal Reserve Bank of St. Louis.",data access,
+    Its functions return tidy data frames for different releases of the specified time series.
+    Note that this product uses the FRED© API but is not endorsed or certified by the Federal Reserve Bank of St. Louis.",data access
 anomalize,"
     The 'anomalize' package enables a ""tidy"" workflow for detecting anomalies in data.
     The main functions are time_decompose(), anomalize(), and time_recompose().
     When combined, it's quite simple to decompose time series, detect anomalies,
-    and create bands separating the ""normal"" data from the anomalous data at scale (i.e. for multiple time series). 
+    and create bands separating the ""normal"" data from the anomalous data at scale (i.e. for multiple time series).
     Time series decomposition is used to remove trend and seasonal components via the time_decompose() function
-    and methods include seasonal decomposition of time series by Loess (""stl"") and 
+    and methods include seasonal decomposition of time series by Loess (""stl"") and
     seasonal decomposition by piecewise medians (""twitter""). The anomalize() function implements
     two methods for anomaly detection of residuals including using an inner quartile range (""iqr"")
     and generalized extreme studentized deviation (""gesd""). These methods are based on
-    those used in the 'forecast' package and the Twitter 'AnomalyDetection' package. 
-    Refer to the associated functions for specific references for these methods. ",anomaly detection,
+    those used in the 'forecast' package and the Twitter 'AnomalyDetection' package.
+    Refer to the associated functions for specific references for these methods. ",modelling
 areal,"A pipeable, transparent implementation of areal weighted interpolation
     with support for interpolating multiple variables in a single function call.
     These tools provide a full-featured workflow for validation and estimation
-    that fits into both modern data management (e.g. tidyverse) and spatial 
-    data (e.g. sf) frameworks.",biology,
+    that fits into both modern data management (e.g. tidyverse) and spatial
+    data (e.g. sf) frameworks.",biology
 bioset,"Functions to help dealing with raw data from measurements, like
     reading and transforming raw values organized in matrices, calculating and
     converting concentrations and calculating precision of duplicates /
     triplicates / ... . It is compatible with and building on top of some
-    'tidyverse'-packages.",utility,
-bjscrapeR,"Drawing heavy influence from 'blscrapeR', this package scrapes crime data from <https://www.bjs.gov/>. Specifically, it scrapes data from the National Crime Victimization Survey which tracks personal and household crime in the USA. The idea is to utilize the 'tidyverse' methodology to create an efficient work flow when dealing with crime statistics.",data access,
+    'tidyverse'-packages.",utility
+bjscrapeR,"Drawing heavy influence from 'blscrapeR', this package scrapes crime data from <https://www.bjs.gov/>. Specifically, it scrapes data from the National Crime Victimization Survey which tracks personal and household crime in the USA. The idea is to utilize the 'tidyverse' methodology to create an efficient work flow when dealing with crime statistics.",data access
 bomrang,"Provides functions to interface with Australian Government Bureau
     of Meteorology ('BOM') data, fetching data and returning a tidy data frame
     of precis forecasts, historical and current weather data from stations,
@@ -32,23 +32,23 @@ bomrang,"Provides functions to interface with Australian Government Bureau
     downloading and importing radar and satellite imagery files.  Data (c)
     Australian Government Bureau of Meteorology Creative Commons (CC)
     Attribution 3.0 licence or Public Access Licence (PAL) as appropriate.  See
-    <http://www.bom.gov.au/other/copyright.shtml> for further details.",data access,
+    <http://www.bom.gov.au/other/copyright.shtml> for further details.",data access
 cancensus,"Integrated, convenient, and uniform access to Canadian
-    Census data and geography retrieved using the 'CensusMapper' API. This package produces analysis-ready 
+    Census data and geography retrieved using the 'CensusMapper' API. This package produces analysis-ready
     tidy data frames and spatial data in multiple formats, as well as convenience functions
     for working with Census variables, variable hierarchies, and region selection. API
     keys are freely available with free registration at <https://censusmapper.ca/api>.
     Census data and boundary geometries are reproduced and distributed on an ""as
     is"" basis with the permission of Statistics Canada (Statistics Canada 2006;
-    2011; 2016).",data access,
-cansim,"Searches for, accesses, and retrieves new-format and old-format Statistics Canada data 
-    tables, as well as individual vectors, as tidy data frames. This package deals with encoding issues, allows for 
-    bilingual English or French language data retrieval, and bundles convenience functions 
-    to make it easier to work with retrieved table data. Optional caching features are provided.",data access,
-comtradr,"Interface with and extract data from the United Nations Comtrade 
-  API <https://comtrade.un.org/data/>. Comtrade provides country level shipping 
-  data for a variety of commodities, these functions allow for easy API query 
-  and data returned as a tidy data frame.",data access,
+    2011; 2016).",data access
+cansim,"Searches for, accesses, and retrieves new-format and old-format Statistics Canada data
+    tables, as well as individual vectors, as tidy data frames. This package deals with encoding issues, allows for
+    bilingual English or French language data retrieval, and bundles convenience functions
+    to make it easier to work with retrieved table data. Optional caching features are provided.",data access
+comtradr,"Interface with and extract data from the United Nations Comtrade
+  API <https://comtrade.un.org/data/>. Comtrade provides country level shipping
+  data for a variety of commodities, these functions allow for easy API query
+  and data returned as a tidy data frame.",data access
 condformat,"Apply and visualize conditional formatting to data frames in R.
     It renders a data frame with cells formatted according to
     criteria defined by rules, using a tidy evaluation syntax. The table is
@@ -56,11 +56,11 @@ condformat,"Apply and visualize conditional formatting to data frames in R.
     available. The conditional formatting rules allow to highlight cells
     matching a condition or add a gradient background to a given column. This
     package supports both 'HTML' and 'LaTeX' outputs in 'knitr' reports, and
-    exporting to an 'xlsx' file.",reporting,
+    exporting to an 'xlsx' file.",reporting
 cropdatape,"Provides peruvian agricultural production data from the Agriculture Minestry of Peru (MINAGRI). The first version includes
              6 crops: rice, quinoa, potato, sweet potato, tomato and wheat; all of them across 24 departments. Initially,  in excel files which has been transformed
              and assembled using tidy data principles, i.e. each variable is in a column, each observation is a row and each value is in a cell.
-             The variables variables are sowing and harvest area per crop, yield, production and price per plot, every one year, from 2004 to 2014.",data access,
+             The variables variables are sowing and harvest area per crop, yield, production and price per plot, every one year, from 2004 to 2014.",data access
 dapr,"An easy-to-use, dependency-free set of functions for iterating over
     elements of various input objects. Functions are wrappers around base
     apply()/lapply()/vapply() functions but designed to have similar
@@ -68,102 +68,102 @@ dapr,"An easy-to-use, dependency-free set of functions for iterating over
     <https://purrr.tidyverse.org/>. Specifically, function names more explicitly
     communicate the expected class of the output and functions also allow for
     the convenient shortcut of '~ .x' instead of the more verbose
-    'function(.x) .x'.",utility,
-dataMeta,Designed to create a basic data dictionary and append to the original dataset's attributes list. The package makes use of a tidy dataset and creates a data frame that will serve as a linker that will aid in building the dictionary. The dictionary is then appended to the list of the original dataset's attributes. The user will have the option of entering variable and item descriptions by writing code or use alternate functions that will prompt the user to add these.,utility,
+    'function(.x) .x'.",utility
+dataMeta,Designed to create a basic data dictionary and append to the original dataset's attributes list. The package makes use of a tidy dataset and creates a data frame that will serve as a linker that will aid in building the dictionary. The dictionary is then appended to the list of the original dataset's attributes. The user will have the option of entering variable and item descriptions by writing code or use alternate functions that will prompt the user to add these.,utility
 desctable,"Easily create descriptive and comparative tables.
     It makes use and integrates directly with the tidyverse family of packages, and pipes.
     Tables are produced as data frames/lists of data frames for easy manipulation after creation,
-    and ready to be saved as csv, or piped to DT::datatable() or pander::pander() to integrate into reports.",reporting,
-driftR,"A tidy implementation of equations that correct for instrumental drift in 
-    continuous water quality monitoring data.  There are many sources of water quality data 
-    including private (ex: YSI instruments) and open source (ex: USGS and NDBC), each of 
-    which are susceptible to errors/inaccuracies due to drift. This package allows the 
-    user to correct their data using one or two standard reference values in a uniform, 
+    and ready to be saved as csv, or piped to DT::datatable() or pander::pander() to integrate into reports.",reporting
+driftR,"A tidy implementation of equations that correct for instrumental drift in
+    continuous water quality monitoring data.  There are many sources of water quality data
+    including private (ex: YSI instruments) and open source (ex: USGS and NDBC), each of
+    which are susceptible to errors/inaccuracies due to drift. This package allows the
+    user to correct their data using one or two standard reference values in a uniform,
     reproducible way. The equations implemented are from Hasenmueller (2011)
-    <doi:10.7936/K7N014KS>.",modelling,
-epubr,"Provides functions supporting the reading and parsing of internal e-book content from EPUB files. 
-    The 'epubr' package provides functions supporting the reading and parsing of internal e-book content from EPUB files. 
-    E-book metadata and text content are parsed separately and joined together in a tidy, nested tibble data frame. 
-    E-book formatting is not completely standardized across all literature. 
-    It can be challenging to curate parsed e-book content across an arbitrary collection of e-books 
-    perfectly and in completely general form, to yield a singular, consistently formatted output. 
-    Many EPUB files do not even contain all the same pieces of information in their respective metadata. 
-    EPUB file parsing functionality in this package is intended for relatively general application to arbitrary EPUB e-books. 
-    However, poorly formatted e-books or e-books with highly uncommon formatting may not work with this package. 
-    There may even be cases where an EPUB file has DRM or some other property that makes it impossible to read with 'epubr'. 
-    Text is read 'as is' for the most part. The only nominal changes are minor substitutions, for example curly quotes changed to straight quotes. 
-    Substantive changes are expected to be performed subsequently by the user as part of their text analysis. 
-    Additional text cleaning can be performed at the user's discretion, such as with functions from packages like 'tm' or 'qdap'.",utility,
+    <doi:10.7936/K7N014KS>.",modelling
+epubr,"Provides functions supporting the reading and parsing of internal e-book content from EPUB files.
+    The 'epubr' package provides functions supporting the reading and parsing of internal e-book content from EPUB files.
+    E-book metadata and text content are parsed separately and joined together in a tidy, nested tibble data frame.
+    E-book formatting is not completely standardized across all literature.
+    It can be challenging to curate parsed e-book content across an arbitrary collection of e-books
+    perfectly and in completely general form, to yield a singular, consistently formatted output.
+    Many EPUB files do not even contain all the same pieces of information in their respective metadata.
+    EPUB file parsing functionality in this package is intended for relatively general application to arbitrary EPUB e-books.
+    However, poorly formatted e-books or e-books with highly uncommon formatting may not work with this package.
+    There may even be cases where an EPUB file has DRM or some other property that makes it impossible to read with 'epubr'.
+    Text is read 'as is' for the most part. The only nominal changes are minor substitutions, for example curly quotes changed to straight quotes.
+    Substantive changes are expected to be performed subsequently by the user as part of their text analysis.
+    Additional text cleaning can be performed at the user's discretion, such as with functions from packages like 'tm' or 'qdap'.",utility
 extdplyr,"If 'dplyr' is a grammar for data manipulation, 'extdplyr' is like
     a short paragraph written in 'dplyr'. 'extdplyr' extends 'dplyr' and
     'tidyr' verbs to some common ""routines"" that manipulate data sets. It uses
-    the same interface and preserves all the features from 'dplyr', has good 
-    performance, and supports various data sources.",utility,
-fedregs,"The Code of Federal Regulations (CFR) annual edition is the codification 
+    the same interface and preserves all the features from 'dplyr', has good
+    performance, and supports various data sources.",utility
+fedregs,"The Code of Federal Regulations (CFR) annual edition is the codification
     of the general and permanent rules published in the Federal Register by the departments
-    and agencies of the Federal Government of the United States of America. Simply, the 
-    'fedregs' package facilitates word processing and sentiment analysis of the CFR using tidy 
-    principles. Note: According to the Code of Federal Regulations XML Rendition User Guide Document: 
+    and agencies of the Federal Government of the United States of America. Simply, the
+    'fedregs' package facilitates word processing and sentiment analysis of the CFR using tidy
+    principles. Note: According to the Code of Federal Regulations XML Rendition User Guide Document:
     ""In general, there are no restrictions on re-use of information in Code of Federal Regulations
     material because U.S. Government works are not subject to copyright. OFR and GPO do not
     restrict downstream uses of Code of Federal Regulations data, except that independent providers
     should be aware that only the OFR and GPO are entitled to represent that they are the providers
     of the official versions of the Code of Federal Regulations and related Federal Register
-    publications.""",data access,
+    publications.""",data access
 flatr,"Contingency Tables are a pain to work with when you want to run regressions.
   This package takes them, flattens them into a long data frame, so you can more easily analyse them!
   As well, you can calculate other related statistics. All of this is done so in a 'tidy' manner,
-  so it should tie in nicely with 'tidyverse' series of packages.",modelling,
-gbfs,"Supplies a set of functions to interface with General Bikeshare 
-    Feed Specification .json feeds in R, allowing users to save and accumulate 
-    tidy .rds datasets for specified cities/bikeshare programs.",data access,
+  so it should tie in nicely with 'tidyverse' series of packages.",modelling
+gbfs,"Supplies a set of functions to interface with General Bikeshare
+    Feed Specification .json feeds in R, allowing users to save and accumulate
+    tidy .rds datasets for specified cities/bikeshare programs.",data access
 gestalt,"Provides a suite of function-building tools centered around a
   (forward) composition operator, %>>>%, which extends the semantics of the
   'magrittr' %>% operator and supports 'tidyverse' quasiquotation. It enables
   you to construct composite functions that can be inspected and transformed as
   list-like objects. In conjunction with %>>>%, a compact function constructor,
   fn(), and a function that performs partial application, partial(), are also
-  provided. Both support quasiquotation.",utility,
+  provided. Both support quasiquotation.",utility
 getCRUCLdata,"Provides functions that automate downloading and importing
     University of East Anglia Climate Research Unit (CRU) CL v. 2.0 climatology
     data into R, facilitates the calculation of minimum temperature and maximum
-    temperature and formats the data into a tidy data frame as a tibble or a 
-    list of raster stack objects for use in an R session.  CRU CL v. 2.0 data 
+    temperature and formats the data into a tidy data frame as a tibble or a
+    list of raster stack objects for use in an R session.  CRU CL v. 2.0 data
     are a gridded climatology of 1961-1990 monthly means released in 2002 and
     cover all land areas (excluding Antarctica) at 10 arcminutes
     (0.1666667 degree) resolution.  For more information see the description of
     the data provided by the University of East Anglia Climate Research Unit,
-    <https://crudata.uea.ac.uk/cru/data/hrg/tmc/readme.txt>.",data access,
+    <https://crudata.uea.ac.uk/cru/data/hrg/tmc/readme.txt>.",data access
 ggalluvial,"Alluvial diagrams use x-splines, sometimes augmented with stacked
     histograms, to visualize multi-dimensional or repeated-measures data with
     categorical or ordinal variables. They can be viewed as simplified and
     standardized Sankey diagrams; see Riehmann, Hanfler, and Froehlich (2005)
     <doi:10.1109/INFVIS.2005.1532152> and Rosvall and Bergstrom (2010)
     <doi:10.1371/journal.pone.0008694>. This package provides ggplot2 layers
-    to produce alluvial diagrams from tidy data.",Add-on,
-ggdag,"Tidy, analyze, and plot directed acyclic graphs (DAGs). 'ggdag' is 
-    built on top of 'dagitty', an R package that uses the 'DAGitty' web tool 
-    (<http://dagitty.net>) for creating and analyzing DAGs. 'ggdag' makes it 
-    easy to tidy and plot 'dagitty' objects using 'ggplot2' and 'ggraph', as 
-    well as common analytic and graphical functions, such as determining 
-    adjustment sets and node relationships. ",Add-on,
-ggeffects,"Compute marginal effects from statistical models and returns the 
-    result as tidy data frames. These data frames are ready to use with the 
-    'ggplot2'-package. Marginal effects can be calculated for many different 
-    models. Interaction terms, splines and polynomial terms are also supported. 
-    The main functions are ggpredict(), ggemmeans() and ggeffect(). There is a 
-    generic plot()-method to plot the results using 'ggplot2'.",Add-on,
-ggguitar,Utilities for Creating Guitar Tablature using tidyverse packages.,utility,music
-gratia,"Graceful 'ggplot'-based graphics and utility functions for working with generalized additive models (GAMs) fitted using the 'mgcv' package. Provides a reimplementation of the plot() method for GAMs that 'mgcv' provides, as well as 'tidyverse' compatible representations of estimated smooths.",modelling,
+    to produce alluvial diagrams from tidy data.",Add-on
+ggdag,"Tidy, analyze, and plot directed acyclic graphs (DAGs). 'ggdag' is
+    built on top of 'dagitty', an R package that uses the 'DAGitty' web tool
+    (<http://dagitty.net>) for creating and analyzing DAGs. 'ggdag' makes it
+    easy to tidy and plot 'dagitty' objects using 'ggplot2' and 'ggraph', as
+    well as common analytic and graphical functions, such as determining
+    adjustment sets and node relationships. ",Add-on
+ggeffects,"Compute marginal effects from statistical models and returns the
+    result as tidy data frames. These data frames are ready to use with the
+    'ggplot2'-package. Marginal effects can be calculated for many different
+    models. Interaction terms, splines and polynomial terms are also supported.
+    The main functions are ggpredict(), ggemmeans() and ggeffect(). There is a
+    generic plot()-method to plot the results using 'ggplot2'.",Add-on
+ggguitar,Utilities for Creating Guitar Tablature using tidyverse packages.,utility
+gratia,"Graceful 'ggplot'-based graphics and utility functions for working with generalized additive models (GAMs) fitted using the 'mgcv' package. Provides a reimplementation of the plot() method for GAMs that 'mgcv' provides, as well as 'tidyverse' compatible representations of estimated smooths.",modelling
 harrietr,"Harriet was Charles Darwin's pet tortoise (possibly). 'harrietr'
     implements some function to manipulate distance matrices and phylogenetic trees
     to make it easier to plot with 'ggplot2' and to manipulate using 'tidyverse'
-    tools.",data manipulation,
-hydroscoper,"R interface to the Greek National Data Bank for Hydrological and 
-    Meteorological Information <http://www.hydroscope.gr/>. It covers 
-    Hydroscope's data sources and provides functions to transliterate, 
-    translate and download them into tidy dataframes (tibbles).",data access,
-infer,The objective of this package is to perform inference using an expressive statistical grammar that coheres with the tidy design framework. ,modelling,
+    tools.",data manipulation
+hydroscoper,"R interface to the Greek National Data Bank for Hydrological and
+    Meteorological Information <http://www.hydroscope.gr/>. It covers
+    Hydroscope's data sources and provides functions to transliterate,
+    translate and download them into tidy dataframes (tibbles).",data access
+infer,The objective of this package is to perform inference using an expressive statistical grammar that coheres with the tidy design framework. ,modelling
 janitor,"The main janitor functions can: perfectly format data.frame column
     names; provide quick counts of variable combinations (i.e., frequency
     tables and crosstabs); and isolate duplicate records. Other janitor functions
@@ -173,63 +173,63 @@ janitor,"The main janitor functions can: perfectly format data.frame column
     %>%. janitor was built with beginning-to-intermediate R users in mind and is
     optimized for user-friendliness. Advanced R users can already do everything
     covered here, but with janitor they can do it faster and save their thinking for
-    the fun stuff.",utility,
-kiwisR,"A wrapper for querying 'WISKI' databases via the 'KiWIS' 'REST' API. 'WISKI' is an 'SQL' relational database 
+    the fun stuff.",utility
+kiwisR,"A wrapper for querying 'WISKI' databases via the 'KiWIS' 'REST' API. 'WISKI' is an 'SQL' relational database
   used for the collection and storage of water data developed by KISTERS and 'KiWIS' is a 'REST' service that provides
-  access to 'WISKI' databases via HTTP requests (<https://water.kisters.de/en/technology-trends/kisters-and-open-data/>). 
-  Contains a list of default databases (called 'hubs') and also allows users to provide their own 'KiWIS' URL. 
-  Supports the entire query process- from metadata to specific time series values. All data is returned as tidy tibbles.",data access,
-landscapemetrics,"Calculates landscape metrics for categorical landscape patterns in 
+  access to 'WISKI' databases via HTTP requests (<https://water.kisters.de/en/technology-trends/kisters-and-open-data/>).
+  Contains a list of default databases (called 'hubs') and also allows users to provide their own 'KiWIS' URL.
+  Supports the entire query process- from metadata to specific time series values. All data is returned as tidy tibbles.",data access
+landscapemetrics,"Calculates landscape metrics for categorical landscape patterns in
     a tidy workflow. 'landscapemetrics' reimplements the most common metrics from
-    'FRAGSTATS' (<https://www.umass.edu/landeco/research/fragstats/fragstats.html>) 
+    'FRAGSTATS' (<https://www.umass.edu/landeco/research/fragstats/fragstats.html>)
     and new ones from the current literature on landscape metrics.
-    This package supports 'raster' spatial objects and takes 
+    This package supports 'raster' spatial objects and takes
     RasterLayer, RasterStacks, RasterBricks or lists of RasterLayer from the
     'raster' package as input arguments. It further provides utility functions
-    to visualize patches, select metrics and building blocks to develop new 
-    metrics.",landscape,
-listless,A lightweight utility for converting lists to tidy data frames.,utility,
-lplyr,"Provides 'dplyr' verbs for lists and other useful 
-    verbs for manipulation of data frames. In particular, it includes a 
-    mutate_which() function that mutates columns for a specific subset of 
-    rows defined by a condition, and fuse() which is a more flexible version 
-    of 'tidyr' unite() function. ",utility,
+    to visualize patches, select metrics and building blocks to develop new
+    metrics.",landscape
+listless,A lightweight utility for converting lists to tidy data frames.,utility
+lplyr,"Provides 'dplyr' verbs for lists and other useful
+    verbs for manipulation of data frames. In particular, it includes a
+    mutate_which() function that mutates columns for a specific subset of
+    rows defined by a condition, and fuse() which is a more flexible version
+    of 'tidyr' unite() function. ",utility
 matsindf,"Provides functions to collapse a tidy data frame into matrices in a data frame
-    and expand a data frame of matrices into a tidy data frame.",utility,
+    and expand a data frame of matrices into a tidy data frame.",utility
 metR,"Many useful functions and extensions for dealing
     with meteorological data in the tidy data framework. Extends 'ggplot2'
     for better plotting of scalar and vector fields and provides commonly
-    used analysis methods in the atmospheric sciences.",meteorology,
-modeldb,Uses 'dplyr' and 'tidyeval' to fit statistical models inside the database. It currently supports KMeans and linear regression models.,database,
-moderndive,"Datasets and wrapper functions for tidyverse-friendly introductory linear regression, used in ModernDive: An Introduction to Statistical and Data Sciences via R available at <http://moderndive.com/> and DataCamp's Modeling with Data in the Tidyverse available at <https://www.datacamp.com/courses/modeling-with-data-in-the-tidyverse>.",modelling,
+    used analysis methods in the atmospheric sciences.",meteorology
+modeldb,Uses 'dplyr' and 'tidyeval' to fit statistical models inside the database. It currently supports KMeans and linear regression models.,database
+moderndive,"Datasets and wrapper functions for tidyverse-friendly introductory linear regression, used in ModernDive: An Introduction to Statistical and Data Sciences via R available at <http://moderndive.com/> and DataCamp's Modeling with Data in the Tidyverse available at <https://www.datacamp.com/courses/modeling-with-data-in-the-tidyverse>.",modelling
 na.tools,"
-    This comprehensive toolkit provide a consistent and 
-    extensible framework for working with missing values in vectors. The 
-    companion package 'tidyimpute' provides similar functionality for list-like 
+    This comprehensive toolkit provide a consistent and
+    extensible framework for working with missing values in vectors. The
+    companion package 'tidyimpute' provides similar functionality for list-like
     and table-like structures).
-    Functions exist for detection, removal, replacement, imputation, 
-    recollection, etc. of 'NAs'.",missing data,
+    Functions exist for detection, removal, replacement, imputation,
+    recollection, etc. of 'NAs'.",missing data
 naniar,"Missing values are ubiquitous in data and need to be explored and
-    handled in the initial stages of analysis. 'naniar' provides data structures 
-    and functions that facilitate the plotting of missing values and examination 
-    of imputations. This allows missing data dependencies to be explored with 
-    minimal deviation from the common work patterns of 'ggplot2' and tidy data. ",missing data,
+    handled in the initial stages of analysis. 'naniar' provides data structures
+    and functions that facilitate the plotting of missing values and examination
+    of imputations. This allows missing data dependencies to be explored with
+    minimal deviation from the common work patterns of 'ggplot2' and tidy data. ",missing data
 ncmeta,"Extract metadata from 'NetCDF' data sources, these can be files, file handles or
- servers. This package leverages and extends the lower level functions of the 'RNetCDF' package 
- providing a consistent set of functions that all return data frames. We introduce named concepts 
- of 'grid', 'axis' and 'source' which are all meaningful entities without formal definition in the 
- 'NetCDF' library <https://www.unidata.ucar.edu/software/netcdf/>. 'RNetCDF' matches the library 
+ servers. This package leverages and extends the lower level functions of the 'RNetCDF' package
+ providing a consistent set of functions that all return data frames. We introduce named concepts
+ of 'grid', 'axis' and 'source' which are all meaningful entities without formal definition in the
+ 'NetCDF' library <https://www.unidata.ucar.edu/software/netcdf/>. 'RNetCDF' matches the library
  itself with only the named concepts of 'variables', 'dimensions' and 'attributes'. 'ncmeta'
- provides a required framework for the in-development 'tidync' project <https://github.com/hypertidy/tidync>.",data access,
+ provides a required framework for the in-development 'tidync' project <https://github.com/hypertidy/tidync>.",data access
 nofrills,"Provides a compact variation of the usual syntax of function
   declaration, in order to support tidyverse-style quasiquotation of a
-  function's arguments and body.",utility,
+  function's arguments and body.",utility
 owmr,"Accesses OpenWeatherMap's (owm) <https://openweathermap.org/> API.
    'owm' itself is a service providing weather data in the past, in the future and now.
    Furthermore, 'owm' serves weather map layers usable in frameworks like 'leaflet'.
    In order to access the API, you need to sign up for an API key. There are free and paid plans.
    Beside functions for fetching weather data from 'owm', 'owmr' supplies
-   tools to tidy up fetched data (for fast and simple access) and to show it on leaflet maps.",data access,
+   tools to tidy up fetched data (for fast and simple access) and to show it on leaflet maps.",data access
 pammtools,"The Piece-wise exponential (Additive Mixed) Model
     (PAMM; Bender and Scheipl (2018) <doi: 10.1177/1471082X17748083>) is a
     powerful model class for survival analysis, based on Generalized Additive
@@ -239,12 +239,12 @@ pammtools,"The Piece-wise exponential (Additive Mixed) Model
     cumulative effects (Bender et. al. (2018) <doi:10.1093/biostatistics/kxy003>.
     pammtools provides tidy workflow for survival analysis with PAMMs,
     including data transformation and other pre- and post-processing
-    functions as well as visualization.",modelling,
+    functions as well as visualization.",modelling
 pivot,"
-    Extends the 'tidyverse' packages 'dbplyr' and 'tidyr' functionality 
-    with pivot(), i.e. spread(), and unpivot(), i.e. gather(), for 
-    reshaping remote tables. 
-    Currently only 'Microsoft SQL Server' is supported. ",database,
+    Extends the 'tidyverse' packages 'dbplyr' and 'tidyr' functionality
+    with pivot(), i.e. spread(), and unpivot(), i.e. gather(), for
+    reshaping remote tables.
+    Currently only 'Microsoft SQL Server' is supported. ",database
 pixiedust,"The introduction of the 'broom' package has made converting model
     objects into data frames as simple as a single function. While the 'broom'
     package focuses on providing tidy data frames that can be used in advanced
@@ -253,183 +253,183 @@ pixiedust,"The introduction of the 'broom' package has made converting model
     a programming interface intended to be similar to 'ggplot2's system of layers
     with fine tuned control over each cell of the table. Options for output include
     printing to the console and to the common markdown formats (markdown, HTML, and
-    LaTeX). With a little 'pixiedust' (and happy thoughts) tables can really fly.",reporting,
-pkggraph,Interactively explore various dependencies of a package(s) (on the Comprehensive R Archive Network Like repositories) and perform analysis using tidy philosophy. Most of the functions return a 'tibble' object (enhancement of 'dataframe') which can be used for further analysis. The package offers functions to produce 'network' and 'igraph' dependency graphs. The 'plot' method produces a static plot based on 'ggnetwork' and 'plotd3' function produces an interactive D3 plot based on 'networkD3'.,package development,
+    LaTeX). With a little 'pixiedust' (and happy thoughts) tables can really fly.",reporting
+pkggraph,Interactively explore various dependencies of a package(s) (on the Comprehensive R Archive Network Like repositories) and perform analysis using tidy philosophy. Most of the functions return a 'tibble' object (enhancement of 'dataframe') which can be used for further analysis. The package offers functions to produce 'network' and 'igraph' dependency graphs. The 'plot' method produces a static plot based on 'ggnetwork' and 'plotd3' function produces an interactive D3 plot based on 'networkD3'.,package development
 pkgverse,"Build your own universe of packages similar to the 'tidyverse'
     package <https://tidyverse.org/> with this meta-package creator. Create a
     package-verse, or meta package, by supplying a custom name for the
     collection of packages and the vector of desired package names to include–
     and optionally supply a destination directory, an indicator of whether to
     keep the created package directory, and/or a vector of verbs implement via
-    the 'usethis' <http://usethis.r-lib.org/> package.",package development,
+    the 'usethis' <http://usethis.r-lib.org/> package.",package development
 plater,"Tools for interacting with data from experiments done in microtiter
-    plates. Easily read in plate-shaped data and convert it to tidy format, 
-    combine plate-shaped data with tidy data, and view tidy data in plate shape.  ",biology,
+    plates. Easily read in plate-shaped data and convert it to tidy format,
+    combine plate-shaped data with tidy data, and view tidy data in plate shape.  ",biology
 quickReg,"A set of functions to extract results from regression models and
  plot the effect size using 'ggplot2' seamlessly. While 'broom' is useful to
  convert statistical analysis objects into tidy data frames, 'coefplot' is adept at showing
  multivariate regression results. With specific outcome, this package could build regression models
  automatically, extract results into a data frame and provide a quicker way to summarize
- models' statistical findings using 'ggplot2'.",modeling,
+ models' statistical findings using 'ggplot2'.",modelling
 rematch2,"Wrappers on 'regexpr' and 'gregexpr' to return the match
-    results in tidy data frames.",utility,
+    results in tidy data frames.",utility
 rhmmer,"
     'HMMER' is a profile hidden Markov model tool used primarily for sequence
     analysis in bioinformatics (<http://hmmer.org/>). 'rhmmer' provides
-    utilities for parsing the 'HMMER' output into tidy data frames.",biology,
+    utilities for parsing the 'HMMER' output into tidy data frames.",biology
 rif,"Client for 'Neuroscience' Information Framework ('NIF') 'APIs'
     (<https://neuinfo.org/>; <https://neuinfo.org/about/webservices>).
     Package includes functions for each 'API' route, and gives back data
-    in tidy data.frame format.",data access,
+    in tidy data.frame format.",data access
 ruler,"Tools for creating data validation pipelines and tidy reports. This
     package offers a framework for exploring and validating data frame like
-    objects using 'dplyr' grammar of data manipulation.",reporting,
-rwalkr,Provides API to Melbourne pedestrian data in tidy data form.,data access,
-salesforcer,"An implementation of the 'Salesforce' Platform APIs (REST, SOAP, 
-    Bulk 1.0, Bulk 2.0, and Metadata) <https://developer.salesforce.com/page/Salesforce_APIs>. 
-    This package is an articulation of the most API methods into R. The API calls 
-    return XML or JSON that is parsed tidy data structures. For more details please 
-    see the 'Salesforces' API references and this package's website 
-    <https://stevenmmortimer.github.io/salesforcer/> for more information, 
-    documentation, and examples.",data access,
-saotd,"This analytic is an in initial foray into sentiment analysis.  This analytic will allow a user to access the Twitter API (once they create their own developer account), ingest tweets of their interest, clean / tidy data, perform topic modeling if interested, compute sentiment scores utilizing the x  bing Lexicon, and output visualizations.",Twitter,
+    objects using 'dplyr' grammar of data manipulation.",reporting
+rwalkr,Provides API to Melbourne pedestrian data in tidy data form.,data access
+salesforcer,"An implementation of the 'Salesforce' Platform APIs (REST, SOAP,
+    Bulk 1.0, Bulk 2.0, and Metadata) <https://developer.salesforce.com/page/Salesforce_APIs>.
+    This package is an articulation of the most API methods into R. The API calls
+    return XML or JSON that is parsed tidy data structures. For more details please
+    see the 'Salesforces' API references and this package's website
+    <https://stevenmmortimer.github.io/salesforcer/> for more information,
+    documentation, and examples.",data access
+saotd,"This analytic is an in initial foray into sentiment analysis.  This analytic will allow a user to access the Twitter API (once they create their own developer account), ingest tweets of their interest, clean / tidy data, perform topic modeling if interested, compute sentiment scores utilizing the x  bing Lexicon, and output visualizations.",Twitter
 servosphereR,"Functions that facilitate and speed up the analysis of data
     produced by a Syntech servosphere <http://www.ockenfels-syntech.com/products/locomotion-compensation/>,
     which is equipment for studying the movement behavior of arthropods.
-    This package is designed to make working with data produced from a 
+    This package is designed to make working with data produced from a
     servosphere easy for someone new to or unfamiliar with R. The functions
     provided in this package fall into three broad-use categories: functions for
     cleaning raw data produced by the servosphere software, functions for
-    deriving movement variables based on position data, and functions for 
+    deriving movement variables based on position data, and functions for
     summarizing movement variables for easier analysis. These functions are
     built with functions from the tidyverse package to work efficiently, as a
     single servosphere file may consist of hundreds of thousands of rows of data
-    and a user may wish to analyze hundreds of files at a time. Many of the 
-    movement variables derivable through this package are described in the 
+    and a user may wish to analyze hundreds of files at a time. Many of the
+    movement variables derivable through this package are described in the
     following papers:
     Otálora-Luna, Fernando; Dickens, Joseph C. (2011) <doi:10.1371/journal.pone.0020990>
     Party, Virginie; Hanot, Christophe; Busser, Daniela Schmidt; Rochat, Didier; Renou, Michel (2013) <doi:10.1371/journal.pone.0052897>
     Bell, William J.; Kramer, Ernest (1980) <doi:10.1007/BF01402908>
-    Becher, Paul G; Guerin, Patrick M. (2009) <doi:10.1016/j.jinsphys.2009.01.006>.",data access,
-SimplifyStats,"Pairwise group comparisons are often performed. While there are many packages that can perform these analyses, often it is the case that only a subset of comparisons are desired. 'SimplifyStats' performs pairwise comparisons and returns the results in a tidy fashion.",statistics,
-sjmisc,"Collection of miscellaneous utility functions, supporting data 
-    transformation tasks like recoding, dichotomizing or grouping variables, 
-    setting and replacing missing values. The data transformation functions 
-    also support labelled data, and all integrate seamlessly into a 
-    'tidyverse'-workflow.",utility,
+    Becher, Paul G; Guerin, Patrick M. (2009) <doi:10.1016/j.jinsphys.2009.01.006>.",data access
+SimplifyStats,"Pairwise group comparisons are often performed. While there are many packages that can perform these analyses, often it is the case that only a subset of comparisons are desired. 'SimplifyStats' performs pairwise comparisons and returns the results in a tidy fashion.",statistics
+sjmisc,"Collection of miscellaneous utility functions, supporting data
+    transformation tasks like recoding, dichotomizing or grouping variables,
+    setting and replacing missing values. The data transformation functions
+    also support labelled data, and all integrate seamlessly into a
+    'tidyverse'-workflow.",utility
 sugrrants,"Provides 'ggplot2' graphics for analysing time
     series data. It aims to fit into the 'tidyverse' and grammar of
-    graphics framework for handling temporal data.",Time-series,
-survutils,"Functional programming principles to iteratively run Cox 
-    regression and plot its results. The results are reported in tidy data 
-    frames. Additional utility functions are available for working with 
-    other aspects of survival analysis such as survival curves, C-statistics, 
-    etc.",modelling,
+    graphics framework for handling temporal data.",Time-series
+survutils,"Functional programming principles to iteratively run Cox
+    regression and plot its results. The results are reported in tidy data
+    frames. Additional utility functions are available for working with
+    other aspects of survival analysis such as survival curves, C-statistics,
+    etc.",modelling
 sweep,"
-    Tidies up the forecasting modeling and prediction work flow, 
-    extends the 'broom' package 
-    with 'sw_tidy', 'sw_glance', 'sw_augment', and 'sw_tidy_decomp' functions 
+    Tidies up the forecasting modeling and prediction work flow,
+    extends the 'broom' package
+    with 'sw_tidy', 'sw_glance', 'sw_augment', and 'sw_tidy_decomp' functions
     for various forecasting models,
-    and enables converting 'forecast' objects to 
-    ""tidy"" data frames with 'sw_sweep'.",modelling,
+    and enables converting 'forecast' objects to
+    ""tidy"" data frames with 'sw_sweep'.",modelling
 tadaatoolbox,"Contains functions for the easy display of statistical tests as well as
     some convenience functions for data cleanup. It is meant to ease existing workflows
     with packages like 'sjPlot', 'dplyr', and 'ggplot2'. The primary components are the functions
     prefixed with 'tadaa_', which are built to work in an interactive environment, but also print
-    tidy markdown tables powered by 'pixiedust' for the creation of 'RMarkdown' reports.",reporting,
+    tidy markdown tables powered by 'pixiedust' for the creation of 'RMarkdown' reports.",reporting
 tbl2xts,"Facilitate the movement between data frames to 'xts'. Particularly
     useful when moving from 'tidyverse' to the widely used 'xts' package, which is
-    the input format of choice to various other packages. It also allows the user 
-    to use a 'spread_by' argument for a character column 'xts' conversion.",Time-series,
-tbltools,"Tools for working with tibbles, or data.frame-like objects 
-    generated by the 'tibble' package <https://tibble.tidyverse.org/>. Functions 
-    assist in converting objects to tibbles and creating frequency tables.",utility,
+    the input format of choice to various other packages. It also allows the user
+    to use a 'spread_by' argument for a character column 'xts' conversion.",Time-series
+tbltools,"Tools for working with tibbles, or data.frame-like objects
+    generated by the 'tibble' package <https://tibble.tidyverse.org/>. Functions
+    assist in converting objects to tibbles and creating frequency tables.",utility
 tidybayes,"Compose data for and extract, manipulate, and visualize posterior draws from Bayesian models
     ('JAGS', 'Stan', 'rstanarm', 'brms', 'MCMCglmm', 'coda', ...) in a tidy data format. Functions are provided
     to help extract tidy data frames of draws from Bayesian models and that generate point
     summaries and intervals in a tidy format. In addition, 'ggplot2' 'geoms' and 'stats' are provided for
     common visualization primitives like points with multiple uncertainty intervals, eye plots (intervals plus
-    densities), and fit curves with multiple, arbitrary uncertainty bands.",Bayesian statistics,
+    densities), and fit curves with multiple, arbitrary uncertainty bands.",Bayesian statistics
 tidyboot,"Compute arbitrary non-parametric bootstrap statistics on data in
-    tidy data frames.",statistics,
+    tidy data frames.",statistics
 tidycensus,"An integrated R interface to the decennial US Census and American Community Survey APIs and
     the US Census Bureau's geographic boundary files.  Allows R users to return Census and ACS data as
-    tidyverse-ready data frames, and optionally returns a list-column with feature geometry for many 
-    geographies. ",data access,
+    tidyverse-ready data frames, and optionally returns a list-column with feature geometry for many
+    geographies. ",data access
 tidygenomics,"Handle genomic data within data frames just as you would with 'GRanges'.
     This packages provides method to deal with genomic intervals the ""tidy-way"" which makes
     it simpler to integrate in the the general data munging process. The API is inspired by the
-    popular 'bedtools' and the genome_join() method from the 'fuzzyjoin' package.",biology,
+    popular 'bedtools' and the genome_join() method from the 'fuzzyjoin' package.",biology
 tidygraph,"A graph, while not ""tidy"" in itself, can be thought of as two tidy
     data frames describing node and edge data respectively. 'tidygraph'
     provides an approach to manipulate these two virtual data frames using the
-    API defined in the 'dplyr' package, as well as provides tidy interfaces to 
-    a lot of common graph algorithms.",graph,
+    API defined in the 'dplyr' package, as well as provides tidy interfaces to
+    a lot of common graph algorithms.",graph
 tidyhydat,"Provides functions to access historical and real-time national 'hydrometric'
     data from Water Survey of Canada data sources (<http://dd.weather.gc.ca/hydrometric/csv/> and
-    <http://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/>) and then applies tidy data principles.",data access,
+    <http://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/>) and then applies tidy data principles.",data access
 tidyimpute,"
-    Functions and methods for imputing missing values (NA) in tables and list 
-    patterned after the tidyverse approach of 'dplyr' and 'rlang'; works with 
-    data.tables as well.",missing data,
-tidylog,Provides feedback about basic 'dplyr' operations.,utility,
+    Functions and methods for imputing missing values (NA) in tables and list
+    patterned after the tidyverse approach of 'dplyr' and 'rlang'; works with
+    data.tables as well.",missing data
+tidylog,Provides feedback about basic 'dplyr' operations.,utility
 tidyLPA,"An interface to the 'mclust' package to easily
     carry out latent profile analysis (""LPA""). Provides functionality to
     estimate commonly-specified models.  Follows a tidy approach, in that
     output is in the form of a data frame that can subsequently be
     computed on. Also has functions to interface to the commercial 'MPlus'
-    software via the 'MplusAutomation' package.",modelling,
-tidyposterior,"Bayesian analysis used here to answer the question: ""when looking at resampling results, are the differences between models 'real'?"" To answer this, a model can be created were the performance statistic is the resampling statistics (e.g. accuracy or RMSE). These values are explained by the model types. In doing this, we can get parameter estimates for each model's affect on performance and make statistical (and practical) comparisons between models. The methods included here are similar to Benavoli et al (2017) <http://jmlr.org/papers/v18/16-305.html>.",Bayesian statistics,
+    software via the 'MplusAutomation' package.",modelling
+tidyposterior,"Bayesian analysis used here to answer the question: ""when looking at resampling results, are the differences between models 'real'?"" To answer this, a model can be created were the performance statistic is the resampling statistics (e.g. accuracy or RMSE). These values are explained by the model types. In doing this, we can get parameter estimates for each model's affect on performance and make statistical (and practical) comparisons between models. The methods included here are similar to Benavoli et al (2017) <http://jmlr.org/papers/v18/16-305.html>.",Bayesian statistics
 tidypredict,"It parses a fitted 'R' model object, and returns a formula
     in 'Tidy Eval' code that calculates the predictions.
     It works with several databases back-ends because it leverages 'dplyr'
     and 'dbplyr' for the final 'SQL' translation of the algorithm. It currently
-    supports lm(), glm(), randomForest(), ranger() and earth() models. ",database,
-tidyquant,"Bringing financial analysis to the 'tidyverse'. The 'tidyquant' 
-    package provides a convenient wrapper to various 'xts', 'zoo', 'quantmod', 'TTR' 
-    and 'PerformanceAnalytics' package 
-    functions and returns the objects in the tidy 'tibble' format. The main 
+    supports lm(), glm(), randomForest(), ranger() and earth() models. ",database
+tidyquant,"Bringing financial analysis to the 'tidyverse'. The 'tidyquant'
+    package provides a convenient wrapper to various 'xts', 'zoo', 'quantmod', 'TTR'
+    and 'PerformanceAnalytics' package
+    functions and returns the objects in the tidy 'tibble' format. The main
     advantage is being able to use quantitative functions with the 'tidyverse'
-    functions including 'purrr', 'dplyr', 'tidyr', 'ggplot2', 'lubridate', etc. See 
-    the 'tidyquant' website for more information, documentation and examples.",Time-series,
-tidyqwi,"The purpose of this package is to access the 
-    United States Census Bureau's Quarterly Workforce Indicator data. Additionally, 
+    functions including 'purrr', 'dplyr', 'tidyr', 'ggplot2', 'lubridate', etc. See
+    the 'tidyquant' website for more information, documentation and examples.",Time-series
+tidyqwi,"The purpose of this package is to access the
+    United States Census Bureau's Quarterly Workforce Indicator data. Additionally,
     the data will be retrieved in a tidy format for further manipulation with full variable
-    descriptions added if desired. Information about the United States Census Bureau's 
-    Quarterly Workforce Indicator is available at 
-    <https://www.census.gov/data/developers/data-sets/qwi.html>.",data access,
+    descriptions added if desired. Information about the United States Census Bureau's
+    Quarterly Workforce Indicator is available at
+    <https://www.census.gov/data/developers/data-sets/qwi.html>.",data access
 tidyRSS,"
-    With the objective of including data from RSS feeds into your analysis, 'tidyRSS' parses RSS, Atom XML, JSON and geoRSS feeds and returns a tidy data frame.",data access,
+    With the objective of including data from RSS feeds into your analysis, 'tidyRSS' parses RSS, Atom XML, JSON and geoRSS feeds and returns a tidy data frame.",data access
 tidystats,"Produce a data file containing the output of statistical models
   and assist with a workflow aimed at writing scientific papers using
   'R Markdown'. Supported statistical functions include: t.test(), cor.test(),
   lm(), glm(), aov(), anova(), and several others. The package is based on tidy
-  data principles and the 'tidyverse' (Wickham, 2017).",statistics,
-tidystopwords,"Functions to generate stopword lists in 53 languages, in a way consistent across all the languages supported. The generated lists are based on the morphological tagset from the Universal Dependencies.",NLP,
+  data principles and the 'tidyverse' (Wickham, 2017).",statistics
+tidystopwords,"Functions to generate stopword lists in 53 languages, in a way consistent across all the languages supported. The generated lists are based on the morphological tagset from the Universal Dependencies.",NLP
 tidystringdist,"Calculation of string distance following the tidy
-    data principles. Built on top of the 'stringdist' package.",NLP,
+    data principles. Built on top of the 'stringdist' package.",NLP
 tidytext,"Text mining for word processing and sentiment analysis using
-    'dplyr', 'ggplot2', and other tidy tools.",NLP,
+    'dplyr', 'ggplot2', and other tidy tools.",NLP
 tidytidbits,"A selection of various tools to extend a data analysis workflow based on the 'tidyverse' packages.
   This includes high-level data frame editing methods (in the style of 'mutate'/'mutate_at'), some methods in the style of
   'purrr' and 'forcats', 'lookup' methods for dict-like lists, a generic method for lumping a data frame by a given count,
   various low-level methods for special treatment of 'NA' values, 'python'-style tuple-assignment and 'truthy'/'falsy' checks,
-  saving to PDF and PNG from a pipe and various small utilities.",utility,
-tidytransit,Read General Transit Feed Specification (GTFS) zipfiles into a list of R dataframes. Perform validation of the data structure against the specification. Analyze the headways and frequencies at routes and stops. Create maps and perform spatial analysis on the routes and stops. Please see the GTFS documentation here for more detail: <http://gtfs.org/>.,data access,
-tidytree,"Phylogenetic tree generally contains multiple components including node, edge, branch and associated data. 'tidytree' provides an approach to convert tree object to tidy data frame as well as provides tidy interfaces to manipulate tree data.",modelling,
+  saving to PDF and PNG from a pipe and various small utilities.",utility
+tidytransit,Read General Transit Feed Specification (GTFS) zipfiles into a list of R dataframes. Perform validation of the data structure against the specification. Analyze the headways and frequencies at routes and stops. Create maps and perform spatial analysis on the routes and stops. Please see the GTFS documentation here for more detail: <http://gtfs.org/>.,data access
+tidytree,"Phylogenetic tree generally contains multiple components including node, edge, branch and associated data. 'tidytree' provides an approach to convert tree object to tidy data frame as well as provides tidy interfaces to manipulate tree data.",modelling
 Tmisc,"Miscellaneous utility functions for data manipulation,
-    data tidying, and working with gene expression data.",biology,
-usfertilizer,"Compiled and cleaned the county-level estimates of fertilizer, 
-    nitrogen and phosphorus, from 1945 to 2012 in United States of America (USA).  The commercial fertilizer data were originally 
+    data tidying, and working with gene expression data.",biology
+usfertilizer,"Compiled and cleaned the county-level estimates of fertilizer,
+    nitrogen and phosphorus, from 1945 to 2012 in United States of America (USA).  The commercial fertilizer data were originally
     generated by USGS based on the sales data of commercial fertilizer. The manure data were estimated
     based on county-level population data of livestock, poultry, and other animals.
-    See the user manual for detailed data sources and cleaning methods.  
-    'usfertilizer' utilized the tidyverse to clean the original data and provide 
-    user-friendly dataframe. Please note that USGS does not endorse this package. Also data from 1986 is not available for now.",data access,
+    See the user manual for detailed data sources and cleaning methods.
+    'usfertilizer' utilized the tidyverse to clean the original data and provide
+    user-friendly dataframe. Please note that USGS does not endorse this package. Also data from 1986 is not available for now.",data access
 webTRISr,"Provides functions to query data from the 'WebTRIS' Traffic Flow API (from Highways England) into tidy data frames.
-    The API documentation is available here: <http://webtris.highwaysengland.co.uk/api/swagger/ui/index>.",data access,
+    The API documentation is available here: <http://webtris.highwaysengland.co.uk/api/swagger/ui/index>.",data access
 widyr,"Encapsulates the pattern of untidying data into a wide matrix,
   performing some processing, then turning it back into a tidy form. This
   is useful for several operations such as co-occurrence counts,
-  correlations, or clustering that are mathematically convenient on wide matrices.",utility,
-tsibble,,Time-series,
+  correlations, or clustering that are mathematically convenient on wide matrices.",utility
+tsibble,,Time-series
