@@ -105,6 +105,22 @@ res <- tools::CRAN_package_db() %>%
 
 nrow(res)
 ```
+Cleaned up number:
+
+```{r echo = FALSE, message = FALSE}
+cleaned <- readr::read_csv("tidyverse/tidy_packages.csv")
+
+nrow(cleaned)
+```
+
+---
+# Very scientific classification
+
+```{r echo = FALSE}
+dplyr::count(cleaned, area, sort = TRUE)  %>%
+  dplyr::filter(n > 2) %>%
+  gt::gt() 
+```
 
 
 ---

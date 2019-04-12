@@ -113,6 +113,304 @@ nrow(res)
 ```
 ## [1] 110
 ```
+Cleaned up number:
+
+
+```
+## [1] 93
+```
+
+---
+# Very scientific classification
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#jjclevqpyl .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  /* table.background.color */
+  width: auto;
+  /* table.width */
+  border-top-style: solid;
+  /* table.border.top.style */
+  border-top-width: 2px;
+  /* table.border.top.width */
+  border-top-color: #A8A8A8;
+  /* table.border.top.color */
+}
+
+#jjclevqpyl .gt_heading {
+  background-color: #FFFFFF;
+  /* heading.background.color */
+  border-bottom-color: #FFFFFF;
+}
+
+#jjclevqpyl .gt_title {
+  color: #000000;
+  font-size: 125%;
+  /* heading.title.font.size */
+  padding-top: 4px;
+  /* heading.top.padding */
+  padding-bottom: 1px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jjclevqpyl .gt_subtitle {
+  color: #000000;
+  font-size: 85%;
+  /* heading.subtitle.font.size */
+  padding-top: 1px;
+  padding-bottom: 4px;
+  /* heading.bottom.padding */
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jjclevqpyl .gt_bottom_border {
+  border-bottom-style: solid;
+  /* heading.border.bottom.style */
+  border-bottom-width: 2px;
+  /* heading.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* heading.border.bottom.color */
+}
+
+#jjclevqpyl .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jjclevqpyl .gt_col_heading {
+  color: #000000;
+  background-color: #FFFFFF;
+  /* column_labels.background.color */
+  font-size: 16px;
+  /* column_labels.font.size */
+  font-weight: initial;
+  /* column_labels.font.weight */
+  vertical-align: middle;
+  padding: 10px;
+  margin: 10px;
+}
+
+#jjclevqpyl .gt_sep_right {
+  border-right: 5px solid #FFFFFF;
+}
+
+#jjclevqpyl .gt_group_heading {
+  padding: 8px;
+  color: #000000;
+  background-color: #FFFFFF;
+  /* stub_group.background.color */
+  font-size: 16px;
+  /* stub_group.font.size */
+  font-weight: initial;
+  /* stub_group.font.weight */
+  border-top-style: solid;
+  /* stub_group.border.top.style */
+  border-top-width: 2px;
+  /* stub_group.border.top.width */
+  border-top-color: #A8A8A8;
+  /* stub_group.border.top.color */
+  border-bottom-style: solid;
+  /* stub_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* stub_group.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* stub_group.border.bottom.color */
+  vertical-align: middle;
+}
+
+#jjclevqpyl .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #000000;
+  background-color: #FFFFFF;
+  /* stub_group.background.color */
+  font-size: 16px;
+  /* stub_group.font.size */
+  font-weight: initial;
+  /* stub_group.font.weight */
+  border-top-style: solid;
+  /* stub_group.border.top.style */
+  border-top-width: 2px;
+  /* stub_group.border.top.width */
+  border-top-color: #A8A8A8;
+  /* stub_group.border.top.color */
+  border-bottom-style: solid;
+  /* stub_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* stub_group.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* stub_group.border.bottom.color */
+  vertical-align: middle;
+}
+
+#jjclevqpyl .gt_striped {
+  background-color: #f2f2f2;
+}
+
+#jjclevqpyl .gt_row {
+  padding: 10px;
+  /* row.padding */
+  margin: 10px;
+  vertical-align: middle;
+}
+
+#jjclevqpyl .gt_stub {
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #A8A8A8;
+  padding-left: 12px;
+}
+
+#jjclevqpyl .gt_stub.gt_row {
+  background-color: #FFFFFF;
+}
+
+#jjclevqpyl .gt_summary_row {
+  background-color: #FFFFFF;
+  /* summary_row.background.color */
+  padding: 6px;
+  /* summary_row.padding */
+  text-transform: inherit;
+  /* summary_row.text_transform */
+}
+
+#jjclevqpyl .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+}
+
+#jjclevqpyl .gt_table_body {
+  border-top-style: solid;
+  /* field.border.top.style */
+  border-top-width: 2px;
+  /* field.border.top.width */
+  border-top-color: #A8A8A8;
+  /* field.border.top.color */
+  border-bottom-style: solid;
+  /* field.border.bottom.style */
+  border-bottom-width: 2px;
+  /* field.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* field.border.bottom.color */
+}
+
+#jjclevqpyl .gt_footnote {
+  font-size: 90%;
+  /* footnote.font.size */
+  padding: 4px;
+  /* footnote.padding */
+}
+
+#jjclevqpyl .gt_sourcenote {
+  font-size: 90%;
+  /* sourcenote.font.size */
+  padding: 4px;
+  /* sourcenote.padding */
+}
+
+#jjclevqpyl .gt_center {
+  text-align: center;
+}
+
+#jjclevqpyl .gt_left {
+  text-align: left;
+}
+
+#jjclevqpyl .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jjclevqpyl .gt_font_normal {
+  font-weight: normal;
+}
+
+#jjclevqpyl .gt_font_bold {
+  font-weight: bold;
+}
+
+#jjclevqpyl .gt_font_italic {
+  font-style: italic;
+}
+
+#jjclevqpyl .gt_super {
+  font-size: 65%;
+}
+
+#jjclevqpyl .gt_footnote_glyph {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="jjclevqpyl" style="overflow-x:auto;"><!--gt table start-->
+<table class='gt_table'>
+<tr>
+<th class='gt_col_heading gt_left' rowspan='1' colspan='1'>area</th>
+<th class='gt_col_heading gt_right' rowspan='1' colspan='1'>n</th>
+</tr>
+<tbody class='gt_table_body'>
+<tr>
+<td class='gt_row gt_left'>data access</td>
+<td class='gt_row gt_right'>25</td>
+</tr>
+<tr>
+<td class='gt_row gt_left gt_striped'>utility</td>
+<td class='gt_row gt_right gt_striped'>18</td>
+</tr>
+<tr>
+<td class='gt_row gt_left'>modelling</td>
+<td class='gt_row gt_right'>12</td>
+</tr>
+<tr>
+<td class='gt_row gt_left gt_striped'>biology</td>
+<td class='gt_row gt_right gt_striped'>5</td>
+</tr>
+<tr>
+<td class='gt_row gt_left'>reporting</td>
+<td class='gt_row gt_right'>5</td>
+</tr>
+<tr>
+<td class='gt_row gt_left gt_striped'>Time-series</td>
+<td class='gt_row gt_right gt_striped'>4</td>
+</tr>
+<tr>
+<td class='gt_row gt_left'>Add-on</td>
+<td class='gt_row gt_right'>3</td>
+</tr>
+<tr>
+<td class='gt_row gt_left gt_striped'>database</td>
+<td class='gt_row gt_right gt_striped'>3</td>
+</tr>
+<tr>
+<td class='gt_row gt_left'>missing data</td>
+<td class='gt_row gt_right'>3</td>
+</tr>
+<tr>
+<td class='gt_row gt_left gt_striped'>NLP</td>
+<td class='gt_row gt_right gt_striped'>3</td>
+</tr>
+<tr>
+<td class='gt_row gt_left'>statistics</td>
+<td class='gt_row gt_right'>3</td>
+</tr>
+</tbody>
+</table>
+<!--gt table end-->
+</div>
 
 
 ---
