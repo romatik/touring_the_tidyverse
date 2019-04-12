@@ -26,6 +26,7 @@ roster %>% janitor::get_dupes(first_name, last_name)
 
 
 # tabyl -------------------------------------------------------------------
+# gt is also interesting
 roster %>%
   janitor::tabyl(subject)
 
