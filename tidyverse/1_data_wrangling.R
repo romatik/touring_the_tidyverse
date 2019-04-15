@@ -21,6 +21,7 @@ roster <- roster_raw %>%
   dplyr::mutate(hire_date = janitor::excel_numeric_to_date(hire_date),
                 cert = dplyr::coalesce(certification_9, certification_10)) %>% # from dplyr
   dplyr::select(-certification_9, -certification_10) # drop unwanted columns
+roster
 
 roster %>% janitor::get_dupes(first_name, last_name)
 
