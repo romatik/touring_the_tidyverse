@@ -1,6 +1,6 @@
 ---
 title: "Touring the tidyverse"
-subtitle: "Beyond Tidyverse"
+subtitle: "Beyond tidyverse"
 author: "Misha Balyasin"
 date: "2019/04/16"
 output:
