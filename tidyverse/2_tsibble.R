@@ -1,15 +1,15 @@
 library(tsibble)
 library(lubridate)
 weather <- nycflights13::weather %>%
-  select(origin, time_hour, temp, humid, precip)
+  dplyr::select(origin, time_hour, temp, humid, precip)
 
-weather_tsbl <- as_tsibble(weather, key = origin) # interval is automatic
+weather_tsbl <- tsibble::as_tsibble(weather, key = origin) # interval is automatic
 weather_tsbl
 
 weather_tsbl %>%
-  group_by(origin) %>%
-  index_by(date = as_date(time_hour)) %>%  # like group_by
-  summarise(
+  dplyr::group_by(origin) %>%
+  tsibble::index_by(date = lubridate::as_date(time_hour)) %>%  # like group_by
+  dplyr::summarise(
     temp_high = max(temp, na.rm = TRUE),
     temp_low = min(temp, na.rm = TRUE)
   )
@@ -18,21 +18,21 @@ weather_tsbl %>%
 library(tsibble)
 pedestrian
 
-has_gaps(pedestrian, .full = TRUE)
+tsibble::has_gaps(pedestrian, .full = TRUE)
 
 ped_gaps <- pedestrian %>%
-  count_gaps(.full = TRUE)
+  tsibble::count_gaps(.full = TRUE)
 ped_gaps
 
 ped_full <- pedestrian %>%
-  fill_gaps(.full = TRUE)
+  tsibble::fill_gaps(.full = TRUE)
 ped_full
 
 pedestrian %>%
-  fill_gaps(Count = 0L, .full = TRUE)
+  tsibble::fill_gaps(Count = 0L, .full = TRUE)
 pedestrian %>%
-  group_by(Sensor) %>%
-  fill_gaps(Count = mean(Count), .full = TRUE)
+  dplyr::group_by(Sensor) %>%
+  tsibble::fill_gaps(Count = mean(Count), .full = TRUE)
 
 # window functions
 # slide()/slide2()/pslide(): sliding window with overlapping observations.
@@ -41,50 +41,52 @@ pedestrian %>%
 library(tsibble)
 library(dplyr)
 pedestrian_full <- pedestrian %>%
-  fill_gaps(.full = TRUE)
+  tsibble::fill_gaps(.full = TRUE)
 pedestrian_full
 
 pedestrian_full %>%
-  group_by(Sensor) %>%
-  mutate(Daily_MA = slide_dbl(Count,
-                              mean, na.rm = TRUE, .size = 24, .align = "center-left"
+  dplyr::group_by(Sensor) %>%
+  dplyr::mutate(Daily_MA = tsibble::slide_dbl(
+                              Count, mean, na.rm = TRUE,
+                              .size = 24, .align = "center-left"
   ))
 
 pedestrian_mth <- pedestrian_full %>%
-  mutate(YrMth = yearmonth(Date_Time)) %>% # yearquarter, yearweek, year, extensible
-  nest(-Sensor, -YrMth)
+  dplyr::mutate(YrMth = tsibble::yearmonth(Date_Time)) %>% # yearquarter, yearweek, year, extensible
+  tidyr::nest(-Sensor, -YrMth)
 pedestrian_mth
 
 pedestrian_mth %>%
-  group_by(Sensor) %>%
+  dplyr::group_by(Sensor) %>%
   # (1)
   # mutate(Monthly_MA = slide_dbl(data,
   #   ~ mean(bind_rows(.)$Count, na.rm = TRUE), .size = 3, .align = "center"
   # ))
   # (2) equivalent to (1)
-  mutate(Monthly_MA = slide_dbl(data,
+  tsibble::mutate(Monthly_MA = tsibble::slide_dbl(data,
                                 ~ mean(.$Count, na.rm = TRUE), .size = 3, .align = "center", .bind = TRUE
   ))
 
 # row-oriented workflow
 my_diag <- function(...) {
-  data <- tibble(...)
+  data <- tibble::tibble(...)
   fit <- lm(Count ~ Time, data = data)
   list(fitted = fitted(fit), resid = residuals(fit))
 }
+
 tictoc::tic()
-pedestrian %>%
-  filter_index(~ "2015-03") %>% # until "2015-03"
-  nest(-Sensor) %>%
-  mutate(diag = purrr::map(data, ~ pslide_dfr(., my_diag, .size = 24 * 7)))
+res <- pedestrian %>%
+  tsibble::filter_index(~ "2015-03") %>% # until "2015-03", tz aware
+  tidyr::nest(-Sensor) %>%
+  dplyr::mutate(diag = purrr::map(data, ~ tsibble::pslide_dfr(., my_diag, .size = 24 * 7)))
+res
 tictoc::toc()
 
 library(furrr)
 plan(multiprocess)
 tictoc::tic()
-pedestrian %>%
-  filter_index(~ "2015-03") %>%
-  nest(-Sensor) %>%
-  mutate(diag = future_map(data, ~ future_pslide_dfr(., my_diag, .size = 24 * 7)))
+res_parallel <- pedestrian %>%
+  tsibble::filter_index(~ "2015-03") %>%
+  tidyr::nest(-Sensor) %>%
+  dplyr::mutate(diag = furrr::future_map(data, ~ tsibble::future_pslide_dfr(., my_diag, .size = 24 * 7)))
 tictoc::toc()
-
