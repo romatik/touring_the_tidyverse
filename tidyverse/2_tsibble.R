@@ -3,7 +3,7 @@ library(lubridate)
 weather <- nycflights13::weather %>%
   dplyr::select(origin, time_hour, temp, humid, precip)
 
-weather_tsbl <- tsibble::as_tsibble(weather, key = origin) # interval is automatic
+weather_tsbl <- tsibble::as_tsibble(weather, key = origin) # interval is automatic, key must uniquely identify the observation
 weather_tsbl
 
 weather_tsbl %>%
@@ -14,44 +14,46 @@ weather_tsbl %>%
     temp_low = min(temp, na.rm = TRUE)
   )
 
-# implicit missingness
-library(tsibble)
-pedestrian
 
+# implicit missingness ----------------------------------------------------
+?pedestrian
+pedestrian
 tsibble::has_gaps(pedestrian, .full = TRUE)
 
 ped_gaps <- pedestrian %>%
   tsibble::count_gaps(.full = TRUE)
-ped_gaps
+ped_gaps # .n shows how many periods are missing in a row
 
 ped_full <- pedestrian %>%
   tsibble::fill_gaps(.full = TRUE)
+sum(is.na(ped_full$Count))
 ped_full
 
 pedestrian %>%
   tsibble::fill_gaps(Count = 0L, .full = TRUE)
+
 pedestrian %>%
   dplyr::group_by(Sensor) %>%
   tsibble::fill_gaps(Count = mean(Count), .full = TRUE)
 
-# window functions
+
+# window functions --------------------------------------------------------
 # slide()/slide2()/pslide(): sliding window with overlapping observations.
 # tile()/tile2()/ptile(): tiling window without overlapping observations.
 # stretch()/stretch2()/pstretch(): fixing an initial window and expanding to include more observations.
-library(tsibble)
-library(dplyr)
-pedestrian_full <- pedestrian %>%
+ped_full <- pedestrian %>%
   tsibble::fill_gaps(.full = TRUE)
-pedestrian_full
+ped_full
 
-pedestrian_full %>%
+ped_full %>%
   dplyr::group_by(Sensor) %>%
   dplyr::mutate(Daily_MA = tsibble::slide_dbl(
                               Count, mean, na.rm = TRUE,
                               .size = 24, .align = "center-left"
   ))
 
-pedestrian_mth <- pedestrian_full %>%
+# months are of different length
+pedestrian_mth <- ped_full %>%
   dplyr::mutate(YrMth = tsibble::yearmonth(Date_Time)) %>% # yearquarter, yearweek, year, extensible
   tidyr::nest(-Sensor, -YrMth)
 pedestrian_mth
