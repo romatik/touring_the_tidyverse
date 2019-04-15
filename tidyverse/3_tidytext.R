@@ -3,26 +3,26 @@ library(dplyr)
 library(tidytext)
 library(ggplot2)
 
-original_books <- austen_books() %>%
-  group_by(book) %>%
-  mutate(line = row_number()) %>%
-  ungroup()
+original_books <- janeaustenr::austen_books() %>%
+  dplyr::group_by(book) %>%
+  dplyr::mutate(line = dplyr::row_number()) %>%
+  dplyr::ungroup()
 
 tidy_books <- original_books %>%
-  unnest_tokens(word, text)
+  tidytext::unnest_tokens(word, text)
 
 tidy_books <- tidy_books %>%
-  anti_join(get_stopwords())
+  dplyr::anti_join(tidytext::get_stopwords())
 
 tidy_books %>%
-  count(word, sort = TRUE)
+  dplyr::count(word, sort = TRUE)
 
 # sentiment analysis
 janeaustensentiment <- tidy_books %>%
-  inner_join(get_sentiments("bing"), by = "word") %>%
-  count(book, index = line %/% 80, sentiment) %>%
-  spread(sentiment, n, fill = 0) %>%
-  mutate(sentiment = positive - negative)
+  dplyr::inner_join(tidytext::get_sentiments("bing"), by = "word") %>%
+  dplyr::count(book, index = line %/% 80, sentiment) %>%
+  tidyr::spread(sentiment, n, fill = 0) %>%
+  dplyr::mutate(sentiment = positive - negative)
 
 ggplot(janeaustensentiment, aes(index, sentiment, fill = book)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
@@ -33,26 +33,21 @@ library(tm)
 data("AssociatedPress", package = "topicmodels")
 AssociatedPress
 
-ap_sentiments <- tidy(AssociatedPress) %>%
-  inner_join(get_sentiments("bing"), by = c(term = "word")) %>%
-  count(document, sentiment, wt = count) %>%
-  spread(sentiment, n, fill = 0) %>%
-  mutate(sentiment = positive - negative) %>%
-  arrange(sentiment)
-
-comparison <- tidy(AssociatedPress) %>%
-  count(word = term) %>%
-  rename(AP = n) %>%
-  inner_join(count(tidy_books, word)) %>%
-  rename(Austen = n) %>%
-  mutate(AP = AP / sum(AP),
-         Austen = Austen / sum(Austen))
+comparison <- tidytext::tidy(AssociatedPress) %>%
+  dplyr::count(word = term) %>%
+  dplyr::rename(AP = n) %>%
+  dplyr::inner_join(dplyr::count(tidy_books, word)) %>%
+  dplyr::rename(Austen = n) %>%
+  dplyr::mutate(AP = AP / sum(AP),
+                Austen = Austen / sum(Austen))
 
 library(scales)
-ggplot(comparison, aes(AP, Austen)) +
-  geom_point(alpha = 0.5) +
-  geom_text(aes(label = word), check_overlap = TRUE,
-            vjust = 1, hjust = 1) +
-  scale_x_log10(labels = percent_format()) +
-  scale_y_log10(labels = percent_format()) +
-  geom_abline(color = "red")
+comparison %>%
+  dplyr::mutate(intensity = abs(AP - Austen)/pmax(AP, Austen)) %>%
+  ggplot(aes(AP, Austen)) +
+    geom_text(aes(label = word, alpha = 1000^(intensity)), check_overlap = TRUE,
+              vjust = 1, hjust = 1) +
+    scale_x_log10(labels = percent_format()) +
+    scale_y_log10(labels = percent_format()) +
+    geom_abline(color = "red") +
+    guides(alpha = FALSE)
